@@ -1,0 +1,99 @@
+:root {
+  /* Brand Colors */
+  --saffron: #FF6B1A;
+  --saffron-light: #FFB347;
+  --saffron-dark: #E55A00;
+  --gold: #D4A017;
+  --gold-light: #F4D35E;
+  --gold-dark: #B8860B;
+  --cream: #FFF8F0;
+  --cream-dark: #F5EDE0;
+  --maroon: #8B1A4A;
+  --maroon-light: #A0325E;
+  --temple-red: #C41E3A;
+  --sacred-white: #FFFCF5;
+  --lotus-pink: #E8A598;
+  --success: #2e7d32;
+  --error: #c62828;
+  --info: #0277bd;
+  --warning: #f9a825;
+
+  /* Typography */
+  --font-display: 'Cinzel Decorative', serif;
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-sanskrit: 'Noto Serif Devanagari', serif;
+
+  /* Spacing System (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 100px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-spring: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Z-Index */
+  --z-navbar: 1000;
+  --z-modal: 2000;
+  --z-fab: 900;
+  --z-loader: 9999;
+}
+
+/* Light Theme Defaults */
+:root[data-theme="light"], :root {
+  --bg: #FFF8F0;
+  --bg-surface: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A0F00;
+  --text-secondary: #5C4A3A;
+  --text-muted: #8B7B6B;
+  --border-color: rgba(212, 160, 23, 0.15);
+  --border-light: rgba(212, 160, 23, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(212, 160, 23, 0.2);
+  --glass-blur: 20px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 8px 32px rgba(212, 160, 23, 0.15);
+  --shadow-gold-glow: 0 0 20px rgba(212, 160, 23, 0.4);
+}
+
+/* Dark Theme Overrides */
+:root[data-theme="dark"] {
+  --bg: #0F0A1E;
+  --bg-surface: #1A1028;
+  --bg-card: #231535;
+  --text-primary: #FFF8F0;
+  --text-secondary: #C4B5A5;
+  --text-muted: #7A6B5B;
+  --border-color: rgba(212, 160, 23, 0.2);
+  --border-light: rgba(212, 160, 23, 0.1);
+  --glass-bg: rgba(15, 10, 30, 0.85);
+  --glass-border: rgba(212, 160, 23, 0.3);
+  --glass-blur: 20px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 8px 32px rgba(212, 160, 23, 0.1);
+  --shadow-gold-glow: 0 0 30px rgba(212, 160, 23, 0.5);
+}

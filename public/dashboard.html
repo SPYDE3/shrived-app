@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard — Shrived.</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon">🕉</div>
+          <span class="nav-logo-text">Shrived.</span>
+        </a>
+      </div>
+      
+      <div class="sidebar-user">
+        <div class="sidebar-avatar">D</div>
+        <div>
+          <div style="font-weight: 600;" id="user-name-display">Devotee</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">User Account</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-link active"><i class="fa-solid fa-house"></i> Overview</a>
+        <a href="#" class="sidebar-link"><i class="fa-solid fa-calendar-check"></i> My Bookings</a>
+        <a href="#" class="sidebar-link"><i class="fa-solid fa-clock-rotate-left"></i> History</a>
+        <a href="#" class="sidebar-link"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+
+      <div style="padding: 20px; margin-top: auto;">
+        <button class="btn btn-outline w-100" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <button class="btn btn-ghost hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')" style="display: block; margin-right: 16px;">
+          <span></span><span></span><span></span>
+        </button>
+        <h2 class="heading-2">Welcome Back, <span id="welcome-name">Devotee</span> 🙏</h2>
+        <div class="nav-actions">
+          <button class="nav-btn-icon" data-theme-toggle>🌙</button>
+          <a href="booking.html" class="btn btn-saffron btn-sm">New Booking</a>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-calendar"></i></div>
+          <div class="stat-info">
+            <h3 id="stat-upcoming">0</h3>
+            <p>Upcoming Pujas</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-check-double"></i></div>
+          <div class="stat-info">
+            <h3 id="stat-completed">0</h3>
+            <p>Completed Rituals</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bookings Table -->
+      <div class="card-glass mt-8">
+        <div class="flex-between mb-6">
+          <h3 class="heading-3">Recent Bookings</h3>
+          <a href="#" style="color: var(--gold); font-weight: 500; text-decoration: underline;">View All</a>
+        </div>
+        
+        <div style="overflow-x: auto;">
+          <table class="data-table" id="bookings-table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Data injected via JS -->
+            </tbody>
+          </table>
+          
+          <div id="no-bookings" style="display: none; padding: 40px; text-align: center; color: var(--text-muted);">
+            <i class="fa-solid fa-calendar-xmark" style="font-size: 3rem; margin-bottom: 16px; opacity: 0.5;"></i>
+            <p>You have no bookings yet.</p>
+            <a href="booking.html" class="btn btn-primary btn-sm mt-4">Book a Puja</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Auth checks
+      const userStr = localStorage.getItem('shrived_user');
+      if(!userStr) {
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      const user = JSON.parse(userStr);
+      document.getElementById('user-name-display').textContent = user.name;
+      document.getElementById('welcome-name').textContent = user.name;
+
+      // Load Bookings from Real API
+      try {
+        const response = await fetch('/api/bookings');
+        const bookings = await response.json();
+        const tbody = document.querySelector('#bookings-table tbody');
+        
+        if (!bookings || bookings.length === 0) {
+          document.getElementById('bookings-table').style.display = 'none';
+          document.getElementById('no-bookings').style.display = 'block';
+        } else {
+          document.getElementById('stat-upcoming').textContent = bookings.length;
+          
+          bookings.forEach(b => {
+            const tr = document.createElement('tr');
+            const statusClass = b.status === 'Pending' ? 'status-pending' : (b.status === 'Confirmed' ? 'status-confirmed' : 'status-completed');
+            
+            // Format ID from MongoDB _id
+            const displayId = 'BKG' + b._id.substring(b._id.length - 6).toUpperCase();
+
+            tr.innerHTML = `
+              <td><strong>${displayId}</strong></td>
+              <td>${b.service}</td>
+              <td>${b.date}</td>
+              <td><span class="status-badge ${statusClass}">${b.status}</span></td>
+              <td>
+                <a href="https://wa.me/917003220662?text=Enquiry%20regarding%20booking%20${displayId}" class="btn btn-outline btn-sm" target="_blank" style="padding: 4px 12px; font-size: 0.8rem;">Contact</a>
+              </td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+      } catch(err) {
+        console.error('Failed to load bookings:', err);
+      }
+    });
+
+    function logout() {
+      localStorage.removeItem('shrived_user');
+      window.location.href = 'index.html'; // In a real app, go to login.html
+    }
+  </script>
+</body>
+</html>

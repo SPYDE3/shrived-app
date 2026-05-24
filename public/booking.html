@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Puja — Shrived.</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🕉</div>
+        <span class="nav-logo-text">Shrived.</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn-icon" data-theme-toggle>🌙</button>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top: 120px; background: var(--bg-surface);">
+    <div class="container">
+      
+      <div class="booking-layout">
+        <!-- Main Form Area -->
+        <div>
+          <h1 class="display-2 mb-2">Book a Puja</h1>
+          <p class="text-secondary mb-8">Fill out the details below to arrange your sacred ceremony.</p>
+
+          <div class="booking-steps">
+            <div class="booking-step active" data-step="1">1. Ritual Details</div>
+            <div class="booking-step" data-step="2">2. Date & Time</div>
+            <div class="booking-step" data-step="3">3. Personal Info</div>
+          </div>
+
+          <div class="card-glass">
+            <form id="booking-form">
+              <!-- Step 1 -->
+              <div class="step-panel active" id="step-1">
+                <h3 class="heading-3 mb-4">Ritual Details</h3>
+                
+                <div class="form-group">
+                  <label class="form-label">Select Service</label>
+                  <select class="form-select" id="puja-select" required>
+                    <option value="" disabled selected>Choose a puja...</option>
+                    <option value="satyanarayan">Satyanarayan Vrat</option>
+                    <option value="grihapravesh">Griha Pravesh</option>
+                    <option value="annaprashan">Annaprashan (Mukhe Bhaat)</option>
+                    <option value="marriage">Marriage Ceremony</option>
+                    <option value="other">Other Ritual</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Preferred Tradition / Language</label>
+                  <select class="form-select" id="lang-select" required>
+                    <option value="" disabled selected>Choose tradition...</option>
+                    <option value="odia">Odia Customs</option>
+                    <option value="bengali">Bengali Customs</option>
+                    <option value="hindi">North Indian / Hindi</option>
+                    <option value="kannada">Kannada</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Do you need Samagri?</label>
+                  <select class="form-select" id="samagri-select">
+                    <option value="yes">Yes, Pandit Ji should bring Samagri</option>
+                    <option value="no">No, I will arrange Samagri</option>
+                  </select>
+                </div>
+
+                <div class="text-right mt-6">
+                  <button type="button" class="btn btn-primary next-step" data-target="2">Next Step →</button>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="step-panel" id="step-2">
+                <h3 class="heading-3 mb-4">Date & Time</h3>
+                
+                <div class="form-group">
+                  <label class="form-label">Preferred Date</label>
+                  <input type="date" class="form-input" id="date-select" required>
+                  <p class="text-muted mt-2" style="font-size: 0.8rem;"><i class="fa-solid fa-circle-info"></i> For auspicious muhurat, please contact us on WhatsApp.</p>
+                </div>
+
+                <div class="form-group mt-6">
+                  <label class="form-label">Preferred Time Slot</label>
+                  <div class="time-slots">
+                    <div class="time-slot" onclick="selectTime(this, 'Morning')">
+                      <span class="time-slot-name">Morning</span>
+                      <span class="time-slot-time">6:00 AM - 12:00 PM</span>
+                    </div>
+                    <div class="time-slot" onclick="selectTime(this, 'Afternoon')">
+                      <span class="time-slot-name">Afternoon</span>
+                      <span class="time-slot-time">12:00 PM - 4:00 PM</span>
+                    </div>
+                    <div class="time-slot" onclick="selectTime(this, 'Evening')">
+                      <span class="time-slot-name">Evening</span>
+                      <span class="time-slot-time">4:00 PM - 8:00 PM</span>
+                    </div>
+                  </div>
+                  <input type="hidden" id="time-select" required>
+                </div>
+
+                <div class="flex-between mt-6">
+                  <button type="button" class="btn btn-outline prev-step" data-target="1">← Back</button>
+                  <button type="button" class="btn btn-primary next-step" data-target="3">Next Step →</button>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="step-panel" id="step-3">
+                <h3 class="heading-3 mb-4">Personal Information</h3>
+                
+                <div class="form-group">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-input" id="name-input" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Phone Number (WhatsApp)</label>
+                  <input type="tel" class="form-input" id="phone-input" placeholder="+91" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Address</label>
+                  <textarea class="form-textarea" id="address-input" placeholder="Your full address in Bangalore..." required></textarea>
+                </div>
+
+                <div class="flex-between mt-6">
+                  <button type="button" class="btn btn-outline prev-step" data-target="2">← Back</button>
+                  <button type="button" class="btn btn-saffron" onclick="submitBooking()">Submit Booking Request</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sidebar Summary -->
+        <div>
+          <div class="booking-summary card-glass">
+            <h3 class="heading-3 mb-4">Booking Summary</h3>
+            <div class="summary-item">
+              <span class="summary-label">Service:</span>
+              <span class="summary-value" id="sum-service">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Tradition:</span>
+              <span class="summary-value" id="sum-lang">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Date:</span>
+              <span class="summary-value" id="sum-date">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Time:</span>
+              <span class="summary-value" id="sum-time">-</span>
+            </div>
+            
+            <div class="mt-6">
+              <p class="text-muted mb-4" style="font-size: 0.85rem;">
+                <i class="fa-solid fa-shield-halved"></i> No payment required now. We will confirm the pandit availability and exact dakshina on WhatsApp.
+              </p>
+              <a href="https://wa.me/917003220662" class="btn btn-outline w-100 mb-2" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat with us directly</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/917003220662" class="whatsapp-fab" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Multi-step logic
+    document.querySelectorAll('.next-step, .prev-step').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const targetId = e.target.getAttribute('data-target');
+        
+        // Basic validation before next
+        if (e.target.classList.contains('next-step')) {
+          const currentPanel = e.target.closest('.step-panel');
+          const inputs = currentPanel.querySelectorAll('select, input[required]');
+          let valid = true;
+          inputs.forEach(inp => {
+            if (!inp.value) valid = false;
+          });
+          if (!valid) {
+            alert('Please fill all required fields before proceeding.');
+            return;
+          }
+        }
+
+        // Hide all
+        document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.booking-step').forEach(s => s.classList.remove('active'));
+        
+        // Show target
+        document.getElementById('step-' + targetId).classList.add('active');
+        document.querySelector(`.booking-step[data-step="${targetId}"]`).classList.add('active');
+        
+        // Mark previous as completed
+        if (e.target.classList.contains('next-step')) {
+          const currentStep = targetId - 1;
+          document.querySelector(`.booking-step[data-step="${currentStep}"]`).classList.add('completed');
+        }
+        
+        updateSummary();
+      });
+    });
+
+    function selectTime(elem, time) {
+      document.querySelectorAll('.time-slot').forEach(t => t.classList.remove('selected'));
+      elem.classList.add('selected');
+      document.getElementById('time-select').value = time;
+      updateSummary();
+    }
+
+    function updateSummary() {
+      const p = document.getElementById('puja-select');
+      const l = document.getElementById('lang-select');
+      const d = document.getElementById('date-select');
+      const t = document.getElementById('time-select');
+      
+      if(p.value) document.getElementById('sum-service').textContent = p.options[p.selectedIndex].text;
+      if(l.value) document.getElementById('sum-lang').textContent = l.options[l.selectedIndex].text;
+      if(d.value) document.getElementById('sum-date').textContent = new Date(d.value).toLocaleDateString();
+      if(t.value) document.getElementById('sum-time').textContent = t.value;
+    }
+
+    // Bind inputs to summary updates
+    document.querySelectorAll('#puja-select, #lang-select, #date-select').forEach(el => {
+      el.addEventListener('change', updateSummary);
+    });
+
+    async function submitBooking() {
+      const name = document.getElementById('name-input').value;
+      const phone = document.getElementById('phone-input').value;
+      const service = document.getElementById('sum-service').textContent;
+      const tradition = document.getElementById('sum-lang').textContent;
+      const date = document.getElementById('sum-date').textContent;
+      const time = document.getElementById('sum-time').textContent;
+      const address = document.getElementById('address-input').value;
+      const samagri = document.getElementById('samagri-select').value;
+      
+      if(!name || !phone) {
+        alert("Please provide Name and Phone.");
+        return;
+      }
+
+      const bookingData = { name, phone, service, tradition, date, time, address, samagri };
+
+      try {
+        // 1. Save to Database
+        const response = await fetch('/api/bookings', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(bookingData)
+        });
+
+        if (!response.ok) throw new Error('Failed to save booking');
+
+        // 2. Redirect to WhatsApp
+        const msg = `Hari Om! 🙏\nI want to book a puja.\n\n*Service:* ${service}\n*Date:* ${date}\n*Name:* ${name}\n*Phone:* ${phone}`;
+        const waUrl = `https://wa.me/917003220662?text=${encodeURIComponent(msg)}`;
+        window.open(waUrl, '_blank');
+        
+        // Navigate to dashboard
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 1000);
+      } catch (err) {
+        console.error(err);
+        alert('There was an error saving your booking. Please try again.');
+      }
+    }
+  </script>
+</body>
+</html>

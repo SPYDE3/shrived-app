@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shrived. — Premium Spiritual Service Booking Platform</title>
+  <meta name="description" content="Book verified Bengali, Odia & Hindi Pandit in Bangalore. Trusted by 1000+ families for Satyanarayan Puja, Griha Pravesh & Hindu rituals.">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="page-loader">
+    <div class="loader-logo">🕉 Shrived.</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🕉</div>
+        <span class="nav-logo-text">Shrived.</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active" data-i18n="navHome">Home</a>
+        <a href="services.html" class="nav-link" data-i18n="navServices">Services</a>
+        <a href="pandits.html" class="nav-link" data-i18n="navPandits">Pandit</a>
+        <a href="gallery.html" class="nav-link" data-i18n="navGallery">Gallery</a>
+        <a href="blog.html" class="nav-link" data-i18n="navBlog">Blog</a>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn-icon" data-theme-toggle title="Toggle Theme">🌙</button>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang-btn="en">EN</button>
+          <button class="lang-btn" data-lang-btn="bn">বাং</button>
+          <button class="lang-btn" data-lang-btn="hi">हि</button>
+          <button class="lang-btn" data-lang-btn="od">ଓ</button>
+        </div>
+        <a href="booking.html" class="btn btn-primary btn-sm nav-cta" data-i18n="navBooking">Book Now</a>
+        <a href="dashboard.html" class="nav-btn-icon" title="Dashboard"><i class="fa-solid fa-user"></i></a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html" data-i18n="navHome">Home</a>
+    <a href="services.html" data-i18n="navServices">Services</a>
+    <a href="pandits.html" data-i18n="navPandits">Pandit</a>
+    <a href="gallery.html" data-i18n="navGallery">Gallery</a>
+    <a href="blog.html" data-i18n="navBlog">Blog</a>
+    <a href="booking.html">Book a Puja</a>
+    <a href="dashboard.html">My Dashboard</a>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-bg-image" style="background-image: url('two.jpeg');"></div>
+    <div class="hero-overlay"></div>
+    <canvas id="diya-canvas" class="hero-particles"></canvas>
+    
+    <div class="container hero-content">
+      <div class="reveal">
+        <span class="hero-eyebrow">🕉 Trusted Spiritual Services — Bangalore & Beyond</span>
+        <h1 data-i18n="heroTitle">Sacred Ceremonies,<br><span class="line-gold">Authentically Delivered</span></h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">
+          Book verified Bengali, Odia & Hindi Pandit in Bangalore. Trusted by 1000+ families for Satyanarayan Puja, Griha Pravesh, Marriage Ceremonies & all Hindu rituals.
+        </p>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <form action="services.html" method="GET" class="hero-search">
+          <input type="text" name="search" placeholder="Search Pujas (e.g. Satyanarayan, Griha Pravesh)..." required>
+          <button type="submit" class="search-btn">Search</button>
+        </form>
+      </div>
+
+      <div class="hero-cta-group reveal reveal-delay-2">
+        <a href="booking.html" class="btn btn-saffron">Book a Puja</a>
+        <a href="pandits.html" class="btn btn-outline">Find a Pandit</a>
+      </div>
+
+      <div class="hero-stats reveal reveal-delay-3">
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-counter="1000" data-suffix="+">0+</span>
+          <span class="hero-stat-label">Pujas Performed</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-counter="4.9" data-suffix="/5">0/5</span>
+          <span class="hero-stat-label">Rating</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-counter="500" data-suffix="+">0+</span>
+          <span class="hero-stat-label">Happy Families</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEO Marquee Banner -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <div class="marquee-item">Near by Odia Nana</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Near by Bengali Pandit</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Near by Hindi Pandit</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Near by North Indian Pandit</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Near by Bengali Thakur Moshai</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Near by Best Hindi Pandit</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Near by Best Odia Pandit</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Nearby Best Bengali Purohit</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Pandit Ji for House Warming Pooja</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Pandit Ji for Satyanarayan Pooja</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Authentic Vedic Priest Bangalore</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Book Pandit Online Bangalore</div><div class="marquee-dot"></div>
+      <!-- Repeat for seamless loop -->
+      <div class="marquee-item">Near by Odia Nana</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Near by Bengali Pandit</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Near by Hindi Pandit</div><div class="marquee-dot"></div>
+      <div class="marquee-item">Near by North Indian Pandit</div><div class="marquee-dot"></div>
+    </div>
+  </div>
+
+  <!-- Daily Quotes Section -->
+  <section class="quote-section reveal">
+    <div class="container">
+      <div class="daily-quote">
+        <div class="om-divider"></div>
+        <p class="quote-text">"Perform your duty, abandon attachment to results."</p>
+        <span class="quote-source">— Bhagavad Gita 2.47</span>
+        <div class="quote-lang-btns">
+          <button class="quote-lang-btn active">EN</button>
+          <button class="quote-lang-btn">বাংলা</button>
+          <button class="quote-lang-btn">हिंदी</button>
+          <button class="quote-lang-btn">ଓଡ଼ିଆ</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Badges & Festival Countdown -->
+  <section class="section-sm">
+    <div class="container grid-2">
+      <div class="card-glass reveal">
+        <h3 class="heading-3 mb-4">Why Families Trust Shrived.</h3>
+        <div class="trust-items flex-col" style="gap: 20px;">
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fa-solid fa-certificate"></i></div>
+            <div>
+              <strong>Certified Vedic Pandit</strong>
+              <p class="text-muted" style="font-size: 0.85rem;">Trained in traditional Gurukuls and verified for credentials.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fa-solid fa-leaf"></i></div>
+            <div>
+              <strong>Customary Samagri Assistance</strong>
+              <p class="text-muted" style="font-size: 0.85rem;">We provide complete, pure, and natural puja samagri arrangements.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fa-solid fa-om"></i></div>
+            <div>
+              <strong>Hassle-Free Authentic Rituals</strong>
+              <p class="text-muted" style="font-size: 0.85rem;">Tailored strictly according to Bengali, Odia, or regional customs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="countdown-widget reveal reveal-delay-1 flex-col flex-center">
+        <h4 class="countdown-festival-name mb-4">🌸 Upcoming Festival: Durga Puja</h4>
+        <div class="countdown-timer">
+          <div class="countdown-unit">
+            <span class="countdown-num" data-countdown="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" data-countdown="hours">00</span>
+            <span class="countdown-label">Hrs</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" data-countdown="minutes">00</span>
+            <span class="countdown-label">Mins</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" data-countdown="seconds">00</span>
+            <span class="countdown-label">Secs</span>
+          </div>
+        </div>
+        <p class="text-muted mt-4" style="font-size:0.9rem;">Book your slots early for the festival season!</p>
+        <a href="booking.html" class="btn btn-outline btn-sm mt-4">Pre-book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Puja Services Section -->
+  <section class="section" style="background: rgba(255,107,26,0.02);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Sacred Offerings</span>
+        <h2 class="display-2">Popular Puja Services</h2>
+        <p>Choose from verified rituals tailored precisely to your community standards, regional languages, and family traditions.</p>
+      </div>
+
+      <div class="grid-4">
+        <!-- Cards -->
+        <div class="service-card reveal" onclick="location.href='booking.html'">
+          <div class="service-icon">🏡</div>
+          <h3>House Warming (Griha Pravesh)</h3>
+          <p>Sanctify your new home with positive energy and divine blessings.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1" onclick="location.href='booking.html'">
+          <div class="service-icon">✨</div>
+          <h3>Satyanarayan Vrat Katha</h3>
+          <p>Monthly Purnima puja for peace, wealth, and wellness.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2" onclick="location.href='booking.html'">
+          <div class="service-icon">💒</div>
+          <h3>Marriage Puja & Vivah</h3>
+          <p>Complete Vedic marriage ceremonies with traditional customs.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-3" onclick="location.href='booking.html'">
+          <div class="service-icon">🔥</div>
+          <h3>Havan & Homam</h3>
+          <p>Sacred fire ceremony to invoke deities and purify surroundings.</p>
+        </div>
+        <div class="service-card reveal" onclick="location.href='booking.html'">
+          <div class="service-icon">🍚</div>
+          <h3>Annaprashan</h3>
+          <p>Baby's first rice feeding ceremony with traditional blessings.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1" onclick="location.href='booking.html'">
+          <div class="service-icon">🔱</div>
+          <h3>Bengali Rituals</h3>
+          <p>Authentic Bengali Durga Puja, Kali Puja, and Saraswati Puja.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2" onclick="location.href='booking.html'">
+          <div class="service-icon">🛕</div>
+          <h3>Odia Rituals</h3>
+          <p>Traditional Odia Laxmi Puja, Sudasha Brata and regional vrat.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-3" onclick="location.href='booking.html'">
+          <div class="service-icon">🕉️</div>
+          <h3>Temple Ceremonies</h3>
+          <p>Special abhishekam and temple offerings managed for you.</p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-8 reveal">
+        <a href="services.html" class="btn btn-primary" data-i18n="viewAll">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Pandit -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Our Divine Guide</span>
+        <h2 class="display-2">Meet Our Verified Purohit</h2>
+        <p>Connect with highly experienced, verified, and gurukul-trained pandit ji.</p>
+      </div>
+      
+      <div class="flex-center reveal">
+        <div class="pandit-card" style="max-width: 450px;">
+          <img src="My_photo.jpeg" alt="Bibhupada Mishra" class="pandit-card-img">
+          <div class="pandit-card-body">
+            <h3 class="pandit-name">Pandit Bibhupada Mishra</h3>
+            <div class="pandit-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Bellandur, Bangalore</span>
+              <span><i class="fa-solid fa-language"></i> Odia, Hindi, Bengali, Sanskrit</span>
+            </div>
+            <div class="pandit-tags">
+              <span class="badge badge-saffron">Odia Customs Expert</span>
+              <span class="badge badge-blue">Vedic Chanting</span>
+              <span class="badge badge-verified"><i class="fa-solid fa-check"></i> Verified</span>
+            </div>
+            <div class="flex-between mb-4 mt-4">
+              <div class="stars">⭐⭐⭐⭐⭐ <span class="text-muted" style="font-size:0.85rem;">(128 families served)</span></div>
+            </div>
+            <div class="pandit-actions flex-col">
+              <a href="https://wa.me/917003220662" class="btn btn-primary w-100 mb-2"><i class="fa-brands fa-whatsapp"></i> Contact Pandit Ji</a>
+              <a href="pandits.html" class="btn btn-outline w-100">View Full Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" style="background: rgba(212,160,23,0.03);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Sacred Flow</span>
+        <h2 class="display-2">How it Works</h2>
+        <p>Shrived simplifies your spiritual arrangements in simple steps.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="how-step reveal">
+          <div class="how-step-num">1</div>
+          <h3 class="heading-3 mb-2">Select Your Puja</h3>
+          <p class="text-secondary">Browse catalog, select language, and choose your preferred date.</p>
+        </div>
+        <div class="how-step reveal reveal-delay-1">
+          <div class="how-step-num">2</div>
+          <h3 class="heading-3 mb-2">Book Your Pandit</h3>
+          <p class="text-secondary">Choose time slot, confirm details via booking form or WhatsApp.</p>
+        </div>
+        <div class="how-step reveal reveal-delay-2">
+          <div class="how-step-num">3</div>
+          <h3 class="heading-3 mb-2">Experience Divine Rituals</h3>
+          <p class="text-secondary">Pandit Ji arrives with sacred items and performs authentic ceremony.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sacred Moments Gallery Preview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Sacred Moments</span>
+        <h2 class="display-2">Real Ceremony Moments</h2>
+        <p>Trusted by Families Across Bangalore & Bhubaneswar</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="gallery-item gallery-glow reveal" onclick="location.href='gallery.html'">
+          <img src="WhatsApp Image 2026-05-24 at 10.54.40 AM.jpeg" alt="Devotional Setup">
+          <div class="gallery-item-overlay">
+            <span class="gallery-category-tag">Devotional Setup</span>
+            <span class="gallery-caption">Divine Chowki Decoration</span>
+          </div>
+        </div>
+        <div class="gallery-item gallery-glow reveal reveal-delay-1" onclick="location.href='gallery.html'">
+          <img src="WhatsApp Image 2026-05-24 at 10.54.42 AM.jpeg" alt="Vigraha Shringar">
+          <div class="gallery-item-overlay">
+            <span class="gallery-category-tag">Vigraha Shringar</span>
+            <span class="gallery-caption">Sacred Radha Krishna Decoration</span>
+          </div>
+        </div>
+        <div class="gallery-item gallery-glow reveal reveal-delay-2" onclick="location.href='gallery.html'">
+          <img src="WhatsApp Image 2026-05-24 at 10.54.43 AM.jpeg" alt="Home Puja">
+          <div class="gallery-item-overlay">
+            <span class="gallery-category-tag">Home Puja</span>
+            <span class="gallery-caption">Ganesh Puja Setup</span>
+          </div>
+        </div>
+        <div class="gallery-item gallery-glow reveal" onclick="location.href='gallery.html'">
+          <img src="WhatsApp Image 2026-05-24 at 10.54.44 AM.jpeg" alt="Havan Ceremony">
+          <div class="gallery-item-overlay">
+            <span class="gallery-category-tag">Havan & Homam</span>
+            <span class="gallery-caption">Sacred Fire Ritual</span>
+          </div>
+        </div>
+        <div class="gallery-item gallery-glow reveal reveal-delay-1" onclick="location.href='gallery.html'">
+          <img src="WhatsApp Image 2026-05-24 at 10.54.45 AM.jpeg" alt="Bengali Rituals">
+          <div class="gallery-item-overlay">
+            <span class="gallery-category-tag">Bengali Customs</span>
+            <span class="gallery-caption">Traditional Setup</span>
+          </div>
+        </div>
+        <div class="gallery-item gallery-glow reveal reveal-delay-2" onclick="location.href='gallery.html'">
+          <img src="WhatsApp Image 2026-05-24 at 10.54.46 AM.jpeg" alt="Odia Customs">
+          <div class="gallery-item-overlay">
+            <span class="gallery-category-tag">Odia Customs</span>
+            <span class="gallery-caption">Authentic Odia Rituals</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-8 reveal">
+        <a href="gallery.html" class="btn btn-outline">View Full Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending & Festival Specials -->
+  <section class="section" style="background: linear-gradient(180deg, var(--bg) 0%, rgba(255,107,26,0.03) 100%);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Trending & Deals</span>
+        <h2 class="display-2">Festival Specials</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="offer-card reveal">
+          <span class="offer-discount">Trending</span>
+          <h3 class="heading-3">Sudasha Brata Puja Package</h3>
+          <p>Special Odia puja packages for Sudasha Brata including pure brass puja items & dedicated Odia Nana.</p>
+          <div class="text-right mt-4"><a href="booking.html" class="btn btn-outline btn-sm">Book Now</a></div>
+        </div>
+        <div class="offer-card reveal reveal-delay-1">
+          <span class="offer-discount">Seasonal</span>
+          <h3 class="heading-3">Kojagori Lokkhi Puja</h3>
+          <p>Book authentic Purohit Bibhupada Mishra for Lokkhi Puja. Customize with custom Alpana drawing requirements.</p>
+          <div class="text-right mt-4"><a href="booking.html" class="btn btn-outline btn-sm">Book Now</a></div>
+        </div>
+        <div class="offer-card reveal reveal-delay-2">
+          <span class="offer-discount">Combo Deal</span>
+          <h3 class="heading-3">Griha Pravesh + Vastu Homam</h3>
+          <p>Complete new house startup bundle with Vaastu Shanti puja, Ganesha Havan, and Satyanarayan katha.</p>
+          <div class="text-right mt-4"><a href="booking.html" class="btn btn-outline btn-sm">Book Now</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="reviews-overall reveal">
+        <div class="reviews-score">4.9</div>
+        <div class="reviews-stars">⭐⭐⭐⭐⭐</div>
+        <div class="reviews-count">Based on 128+ verified reviews</div>
+        <div class="mt-4">
+          <span class="badge badge-verified">★ Google Verified</span>
+          <span class="badge badge-gold mx-2">🛡️ Trusted Platform</span>
+          <span class="badge badge-blue">✓ Background Verified Priests</span>
+        </div>
+      </div>
+      
+      <div class="reviews-carousel mt-8 reveal">
+        <!-- Injected via reviews.js -->
+      </div>
+      
+      <div class="text-center mt-8 reveal flex-center" style="gap:16px; flex-wrap:wrap;">
+        <button class="btn btn-outline"><i class="fa-brands fa-google"></i> View on Google</button>
+        <a href="https://wa.me/917003220662" class="btn btn-saffron"><i class="fa-brands fa-whatsapp"></i> Book on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Preview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Spiritual Knowledge</span>
+        <h2 class="display-2">Latest from the Blog</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="blog-card reveal">
+          <img src="threejpeg.jpeg" alt="Blog" class="blog-card-img">
+          <div class="blog-card-body">
+            <span class="badge badge-gold mb-2">Puja Guide</span>
+            <h3 class="heading-3 mb-2">Complete Guide to Satyanarayan Puja: Vidhi & Benefits</h3>
+            <p class="text-secondary mb-4" style="font-size:0.9rem;">Discover the sacred significance and step-by-step procedure for this auspicious vrat.</p>
+            <div class="text-right" style="font-size:0.8rem;">
+              <a href="blog.html" style="font-weight:600;">Read More →</a>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card reveal reveal-delay-1">
+          <img src="two.jpeg" alt="Blog" class="blog-card-img">
+          <div class="blog-card-body">
+            <span class="badge badge-saffron mb-2">Festivals</span>
+            <h3 class="heading-3 mb-2">Top 10 Bengali Festivals to Celebrate in Bangalore</h3>
+            <p class="text-secondary mb-4" style="font-size:0.9rem;">A complete calendar of major Bengali customs and how to prepare for them.</p>
+            <div class="text-right" style="font-size:0.8rem;">
+              <a href="blog.html" style="font-weight:600;">Read More →</a>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card reveal reveal-delay-2">
+          <img src="fourth.jpeg" alt="Blog" class="blog-card-img">
+          <div class="blog-card-body">
+            <span class="badge badge-blue mb-2">Muhurat</span>
+            <h3 class="heading-3 mb-2">Griha Pravesh Muhurat 2026: Best Dates & Vedic Rituals</h3>
+            <p class="text-secondary mb-4" style="font-size:0.9rem;">Find the most auspicious timings for entering your new home this year.</p>
+            <div class="text-right" style="font-size:0.8rem;">
+              <a href="blog.html" style="font-weight:600;">Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-8 reveal">
+        <a href="blog.html" class="btn btn-outline">Read More Articles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chatbot FAB + Window -->
+  <div class="chatbot-fab" id="chatbot-fab-btn">
+    🕉️<div class="chatbot-dot"></div>
+  </div>
+  
+  <div class="chatbot-window" id="chatbot-box">
+    <div class="chatbot-header">
+      <div class="chatbot-avatar">🧘</div>
+      <div>
+        <div class="chatbot-name">Shrived. AI Guide</div>
+        <div class="chatbot-status">Online • Spiritual Assistant</div>
+      </div>
+      <button style="margin-left: auto; color: white; background:transparent; border:none; font-size: 1.5rem; cursor: pointer;" id="close-chatbot">&times;</button>
+    </div>
+    <div class="chatbot-messages" id="chatbot-chat-area">
+      <div class="chat-msg bot">
+        <div class="chat-bubble">
+          Pranam! I am your spiritual guide at Shrived. How can I help you today?
+          <div class="chat-suggestions">
+            <button class="chat-suggestion-btn" onclick="sendSpiritualQuery('Suggest Puja for new house')">New House Puja</button>
+            <button class="chat-suggestion-btn" onclick="sendSpiritualQuery('Odia pandit in Bangalore')">Odia Pandit</button>
+            <button class="chat-suggestion-btn" onclick="sendSpiritualQuery('Satyanarayan Puja details')">Satyanarayan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chatbot-input-area">
+      <input type="text" class="chatbot-input" id="chatbot-text-input" placeholder="Ask about pujas, muhurat..." onkeypress="handleChatEnter(event)">
+      <button class="chatbot-send" onclick="submitSpiritualMsg()"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/917003220662?text=Pranam%20Shrived,%20I'd%20like%20to%20book%20a%20puja/pandit%20service." class="whatsapp-fab" target="_blank" title="Contact us on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">🕉 Shrived.</span>
+          <p>Connecting modern Hindu families with authentic Vedic rituals, verified pandit, and divine peace across Bangalore & beyond.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://wa.me/917003220662" class="social-link" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Puja Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html" class="footer-link">Satyanarayan Puja</a></li>
+            <li><a href="services.html" class="footer-link">Griha Pravesh Havan</a></li>
+            <li><a href="services.html" class="footer-link">Marriage Ceremonies</a></li>
+            <li><a href="services.html" class="footer-link">Annaprashan</a></li>
+            <li><a href="services.html" class="footer-link">Bengali Rituals</a></li>
+            <li><a href="services.html" class="footer-link">Odia Rituals</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Find Pandit</h4>
+          <ul class="footer-links">
+            <li><a href="pandits.html" class="footer-link">Bengali Purohit</a></li>
+            <li><a href="pandits.html" class="footer-link">Odia Pandit (Nana)</a></li>
+            <li><a href="pandits.html" class="footer-link">Hindi Pandit</a></li>
+            <li><a href="pandits.html" class="footer-link">North Indian Pandit</a></li>
+            <li><a href="pandits.html" class="footer-link">Vedic Priest Bangalore</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="gallery.html" class="footer-link">Sacred Moments Gallery</a></li>
+            <li><a href="blog.html" class="footer-link">Spiritual Blog</a></li>
+            <li><a href="booking.html" class="footer-link">Book a Puja</a></li>
+            <li><a href="dashboard.html" class="footer-link">My Dashboard</a></li>
+            <li><a href="login.html" class="footer-link">Login / Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Shrived. All rights reserved. Built with devotion 🙏</span>
+        <div class="footer-lang-switcher">
+          <button class="lang-btn" data-lang-btn="en">English</button>
+          <button class="lang-btn" data-lang-btn="bn">বাংলা</button>
+          <button class="lang-btn" data-lang-btn="hi">हिंदी</button>
+          <button class="lang-btn" data-lang-btn="od">ଓଡ଼ିଆ</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/reviews.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/auth.js"></script>
+
+</body>
+</html>
