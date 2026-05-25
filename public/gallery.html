@@ -3,11 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sacred Moments Gallery — Shrived.</title>
+  <title>Sacred Gallery — Shrived.</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* Modern Masonry Gallery */
+    .masonry-gallery {
+      column-count: 4;
+      column-gap: 20px;
+      padding: 20px 0;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 20px;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      background: var(--surface);
+    }
+    .masonry-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .masonry-item::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 40%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .masonry-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(255,107,26,0.15);
+      border: 1px solid rgba(212,160,23,0.3);
+    }
+    .masonry-item:hover img {
+      transform: scale(1.05);
+    }
+    .masonry-item:hover::after {
+      opacity: 1;
+    }
+    .masonry-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 1.1rem;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .masonry-item:hover .masonry-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    @media (max-width: 1200px) { .masonry-gallery { column-count: 3; } }
+    @media (max-width: 900px) { .masonry-gallery { column-count: 2; } }
+    @media (max-width: 600px) { .masonry-gallery { column-count: 1; } }
+  </style>
 </head>
 <body>
 
@@ -21,176 +86,152 @@
       <div class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Services</a>
-        <a href="pandits.html" class="nav-link">Pandit</a>
         <a href="gallery.html" class="nav-link active">Gallery</a>
         <a href="blog.html" class="nav-link">Blog</a>
       </div>
       <div class="nav-actions">
         <button class="nav-btn-icon" data-theme-toggle>🌙</button>
         <a href="booking.html" class="btn btn-primary btn-sm nav-cta">Book Now</a>
+
         <div class="hamburger"><span></span><span></span><span></span></div>
       </div>
     </div>
   </nav>
 
-  <section class="section" style="padding-top: 120px;">
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html">Blog</a>
+    <a href="booking.html">Book a Puja</a>
+
+  </div>
+
+  <!-- Header -->
+  <div class="page-header" style="background: linear-gradient(180deg, rgba(255,107,26,0.05) 0%, var(--bg) 100%); padding-top: 140px; padding-bottom: 40px; text-align: center;">
+    <div class="container reveal">
+      <div class="nav-logo-icon" style="font-size: 3rem; color: var(--saffron); margin-bottom: 16px;">📸</div>
+      <h1 class="display-2" style="margin-bottom: 16px;">Real Ceremony Moments</h1>
+      <p class="text-secondary" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Explore moments of pure devotion, authentic rituals, and beautifully adorned setups from our recent pujas.</p>
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <section class="section" style="padding-top: 20px;">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="eyebrow">Visual Journey</span>
-        <h1 class="display-2">Sacred Moments</h1>
-        <p>Glimpses of divine ceremonies performed by our verified Pandits.</p>
+      <div class="masonry-gallery">
+        
+        <div class="masonry-item reveal">
+          <img src="ai_homam.png" alt="Sacred Homam">
+          <div class="masonry-caption">✨ Sacred Homam Fire (Concept)</div>
+        </div>
+        
+        <div class="masonry-item reveal reveal-delay-1">
+          <img src="fir.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Authentic Rituals</div>
+        </div>
+
+        <div class="masonry-item reveal reveal-delay-2">
+          <img src="sec.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Divine Setup</div>
+        </div>
+
+        <div class="masonry-item reveal">
+          <img src="thir.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Family Blessings</div>
+        </div>
+
+        <div class="masonry-item reveal reveal-delay-1">
+          <img src="four.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Traditional Puja</div>
+        </div>
+
+        <div class="masonry-item reveal reveal-delay-2">
+          <img src="ai_kalash.png" alt="Decorated Kalash">
+          <div class="masonry-caption">✨ Premium Kalash Setup (Concept)</div>
+        </div>
+
+        <div class="masonry-item reveal">
+          <img src="five.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Authentic Samagri</div>
+        </div>
+
+        <div class="masonry-item reveal reveal-delay-1">
+          <img src="six.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Havan & Homam</div>
+        </div>
+
+        <div class="masonry-item reveal reveal-delay-2">
+          <img src="sev.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Devotional Chanting</div>
+        </div>
+
+        <div class="masonry-item reveal">
+          <img src="eigh.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Temple Vibe</div>
+        </div>
+
+        <div class="masonry-item reveal reveal-delay-1">
+          <img src="nine.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Auspicious Start</div>
+        </div>
+
+        <div class="masonry-item reveal reveal-delay-2">
+          <img src="ten.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Vedic Blessings</div>
+        </div>
+
+        <div class="masonry-item reveal">
+          <img src="elev.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Sacred Environment</div>
+        </div>
+
+        <div class="masonry-item reveal reveal-delay-1">
+          <img src="twel.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Festive Decoration</div>
+        </div>
+
+        <div class="masonry-item reveal reveal-delay-2">
+          <img src="thirt.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Pure Devotion</div>
+        </div>
+
+        <div class="masonry-item reveal">
+          <img src="fourt.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Spiritual Ambience</div>
+        </div>
+
+        <div class="masonry-item reveal reveal-delay-1">
+          <img src="fif.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Joyous Ceremony</div>
+        </div>
+
+        <div class="masonry-item reveal reveal-delay-2">
+          <img src="WhatsApp Image 2026-05-25 at 11.36.05 AM.jpeg" alt="Ceremony">
+          <div class="masonry-caption">Purohit Blessings</div>
+        </div>
+
       </div>
-
-      <div class="gallery-filters reveal reveal-delay-1">
-        <button class="filter-btn active" data-filter="all">All Photos</button>
-        <button class="filter-btn" data-filter="setup">Puja Setups</button>
-        <button class="filter-btn" data-filter="rituals">Rituals & Havan</button>
-        <button class="filter-btn" data-filter="shringar">Deity Shringar</button>
-      </div>
-
-      <div class="gallery-masonry mt-8">
-        <!-- Gallery Items -->
-        <div class="gallery-item gallery-glow reveal" data-category="setup" onclick="openLightbox(this)">
-          <img src="WhatsApp Image 2026-05-24 at 10.54.40 AM.jpeg" alt="Devotional Setup">
-          <div class="gallery-item-overlay">
-            <span class="gallery-category-tag">Setup</span>
-            <span class="gallery-caption">Divine Chowki Decoration</span>
-            <div class="gallery-reactions">
-              <button class="reaction-btn" onclick="toggleReaction(event, this)"><i class="fa-regular fa-heart"></i> <span>24</span></button>
-              <button class="reaction-btn" onclick="toggleReaction(event, this)"><i class="fa-solid fa-hands-praying"></i> <span>12</span></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item gallery-glow reveal reveal-delay-1" data-category="shringar" onclick="openLightbox(this)">
-          <img src="WhatsApp Image 2026-05-24 at 10.54.42 AM.jpeg" alt="Vigraha Shringar">
-          <div class="gallery-item-overlay">
-            <span class="gallery-category-tag">Shringar</span>
-            <span class="gallery-caption">Sacred Radha Krishna Decoration</span>
-            <div class="gallery-reactions">
-              <button class="reaction-btn" onclick="toggleReaction(event, this)"><i class="fa-regular fa-heart"></i> <span>45</span></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="gallery-item gallery-glow reveal reveal-delay-2" data-category="rituals" onclick="openLightbox(this)">
-          <img src="WhatsApp Image 2026-05-24 at 10.54.43 AM.jpeg" alt="Home Puja">
-          <div class="gallery-item-overlay">
-            <span class="gallery-category-tag">Rituals</span>
-            <span class="gallery-caption">Ganesh Puja Setup</span>
-          </div>
-        </div>
-
-        <div class="gallery-item gallery-glow reveal" data-category="rituals" onclick="openLightbox(this)">
-          <img src="WhatsApp Image 2026-05-24 at 10.54.44 AM.jpeg" alt="Havan Ceremony">
-          <div class="gallery-item-overlay">
-            <span class="gallery-category-tag">Havan</span>
-            <span class="gallery-caption">Sacred Fire Ritual</span>
-          </div>
-        </div>
-
-        <div class="gallery-item gallery-glow reveal reveal-delay-1" data-category="setup" onclick="openLightbox(this)">
-          <img src="WhatsApp Image 2026-05-24 at 10.54.45 AM.jpeg" alt="Bengali Rituals">
-          <div class="gallery-item-overlay">
-            <span class="gallery-category-tag">Setup</span>
-            <span class="gallery-caption">Traditional Setup</span>
-          </div>
-        </div>
-
-        <div class="gallery-item gallery-glow reveal reveal-delay-2" data-category="rituals" onclick="openLightbox(this)">
-          <img src="WhatsApp Image 2026-05-24 at 10.54.46 AM.jpeg" alt="Odia Customs">
-          <div class="gallery-item-overlay">
-            <span class="gallery-category-tag">Rituals</span>
-            <span class="gallery-caption">Authentic Odia Rituals</span>
-          </div>
-        </div>
+      
+      <!-- Bottom CTA -->
+      <div class="text-center mt-12 reveal">
+        <h3 class="heading-3 mb-4">Ready to host your own beautiful ceremony?</h3>
+        <a href="booking.html" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;"><i class="fa-regular fa-calendar-check"></i> Book Your Puja</a>
       </div>
     </div>
   </section>
 
-  <!-- Lightbox Modal -->
-  <div class="lightbox" id="gallery-lightbox">
-    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    <button class="lightbox-prev" onclick="changeImage(-1)">&#10094;</button>
-    <div class="lightbox-content flex-col flex-center">
-      <img src="" id="lightbox-img" alt="Gallery View">
-      <div class="lightbox-caption" id="lightbox-caption"></div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom text-center">
+        <span>&copy; 2026 Shrived. All rights reserved. Built with devotion 🙏</span>
+      </div>
     </div>
-    <button class="lightbox-next" onclick="changeImage(1)">&#10095;</button>
-  </div>
+  </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    // Gallery Filtering
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        e.target.classList.add('active');
-        const filter = e.target.getAttribute('data-filter');
-        
-        document.querySelectorAll('.gallery-item').forEach(item => {
-          if (filter === 'all' || item.getAttribute('data-category') === filter) {
-            item.style.display = 'block';
-            setTimeout(() => item.style.opacity = '1', 50);
-          } else {
-            item.style.opacity = '0';
-            setTimeout(() => item.style.display = 'none', 300);
-          }
-        });
-      });
-    });
-
-    // Lightbox Logic
-    let currentImages = [];
-    let currentIndex = 0;
-
-    function openLightbox(element) {
-      // Gather all currently visible images
-      currentImages = Array.from(document.querySelectorAll('.gallery-item'))
-                           .filter(item => item.style.display !== 'none');
-      
-      currentIndex = currentImages.indexOf(element);
-      updateLightbox();
-      document.getElementById('gallery-lightbox').classList.add('active');
-    }
-
-    function closeLightbox() {
-      document.getElementById('gallery-lightbox').classList.remove('active');
-    }
-
-    function changeImage(dir) {
-      currentIndex += dir;
-      if (currentIndex >= currentImages.length) currentIndex = 0;
-      if (currentIndex < 0) currentIndex = currentImages.length - 1;
-      updateLightbox();
-    }
-
-    function updateLightbox() {
-      const item = currentImages[currentIndex];
-      const imgSrc = item.querySelector('img').src;
-      const caption = item.querySelector('.gallery-caption').textContent;
-      
-      document.getElementById('lightbox-img').src = imgSrc;
-      document.getElementById('lightbox-caption').textContent = caption;
-    }
-
-    // Reaction Button logic
-    function toggleReaction(e, btn) {
-      e.stopPropagation(); // Prevent opening lightbox
-      const icon = btn.querySelector('i');
-      const span = btn.querySelector('span');
-      let count = parseInt(span.textContent);
-      
-      if (btn.classList.contains('reacted')) {
-        btn.classList.remove('reacted');
-        icon.classList.replace('fa-solid', 'fa-regular');
-        span.textContent = count - 1;
-      } else {
-        btn.classList.add('reacted');
-        icon.classList.replace('fa-regular', 'fa-solid');
-        span.textContent = count + 1;
-      }
-    }
-  </script>
+  <script src="js/animations.js"></script>
 </body>
 </html>
