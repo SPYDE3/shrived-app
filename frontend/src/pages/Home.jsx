@@ -113,7 +113,9 @@ const Home = () => {
     { id: 'annaprashan', icon: '🍚', title: 'Annaprashan', desc: "Baby's first rice feeding ceremony with traditional blessings.", image: 'ANNAPRASANA.jpg' },
     { id: 'durga', icon: '🔱', title: 'Bengali Rituals', desc: 'Authentic Bengali Durga Puja, Kali Puja, and Saraswati Puja.', image: 'Bengali Rituals.jpg' },
     { id: 'odia', icon: '🛕', title: 'Odia Rituals', desc: 'Traditional Odia Laxmi Puja, Sudasha Brata and regional vrat.', image: 'Odia Rituals.jpg' },
-    { id: 'temple', icon: '🕉️', title: 'Temple Ceremonies', desc: 'Special abhishekam and temple offerings managed for you.', image: 'temple ceremonies.jpg' }
+    { id: 'temple', icon: '🕉️', title: 'Temple Ceremonies', desc: 'Special abhishekam and temple offerings managed for you.', image: 'temple ceremonies.jpg' },
+    { id: 'sundarkanda', icon: '🐒', title: 'Sundarkanda Path', desc: 'Sacred recitation of Lord Hanuman\'s epic journey for strength and protection.', image: 'Sundarkanda.jpg' },
+    { id: 'rudrabhishek', icon: '🔱', title: 'Rudrabhishek Puja', desc: 'Sacred bathing of Shiva Lingam with holy liquids to invoke Lord Shiva\'s blessings.', image: 'rudrabhishek.png' }
   ];
 
   const galleryPreview = [
@@ -236,11 +238,11 @@ const Home = () => {
             <p className="text-gray-400 max-w-[600px] mx-auto">Choose from verified rituals tailored precisely to your community standards, regional languages, and family traditions.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {popularServices.map((service) => (
               <div key={service.id} className="service-card overflow-hidden bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between shadow-sm" style={{ padding: 0 }}>
                 <div>
-                  <div className="relative h-44 w-full overflow-hidden bg-gray-900">
+                  <div className="relative h-56 w-full overflow-hidden bg-gray-900">
                     <img 
                       src={service.image} 
                       alt={service.title} 
@@ -256,9 +258,12 @@ const Home = () => {
                   </div>
                 </div>
                 
-                <div className="px-6 pb-6 flex flex-col gap-2">
-                  <Link to={`/booking?puja=${service.id}`} className="btn btn-outline text-center py-2 text-xs">Details</Link>
-                  <WhatsAppButton pujaName={service.title} text="Quick Book" className="py-2 text-xs shadow-none" />
+                <div className="px-6 pb-6">
+                  <WhatsAppButton 
+                    pujaName={service.title} 
+                    text="Quick Book" 
+                    className="w-full !py-3.5 !rounded-xl !bg-gradient-to-r !from-[#25D366] !to-[#128C7E] hover:!from-[#20ba5a] hover:!to-[#107c6f] !shadow-md hover:!shadow-lg !hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 border-none" 
+                  />
                 </div>
               </div>
             ))}
