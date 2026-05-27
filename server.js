@@ -10,7 +10,14 @@ const bookingRoutes = require('./routes/bookingRoutes');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://shrivedpuja.com',
+    'https://www.shrivedpuja.com',
+    'http://localhost:5173'   // local dev
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
