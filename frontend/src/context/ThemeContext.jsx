@@ -3,11 +3,11 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(() => localStorage.getItem('shrived-theme') || 'light');
+  const [theme, setTheme] = useState(() => localStorage.getItem('shrivedpuja-theme') || 'light');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('shrived-theme', theme);
+    localStorage.setItem('shrivedpuja-theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

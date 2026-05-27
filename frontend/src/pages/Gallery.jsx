@@ -7,13 +7,13 @@ const Gallery = () => {
   
   // Local storage based reactions state
   const [reactions, setReactions] = useState(() => {
-    const saved = localStorage.getItem('shrived-gallery-reactions');
+    const saved = localStorage.getItem('shrivedpuja-gallery-reactions');
     return saved ? JSON.parse(saved) : {};
   });
 
   // Local storage based comments state
   const [comments, setComments] = useState(() => {
-    const saved = localStorage.getItem('shrived-gallery-comments');
+    const saved = localStorage.getItem('shrivedpuja-gallery-comments');
     if (saved) return JSON.parse(saved);
     
     // Seed initial comments
@@ -33,11 +33,11 @@ const Gallery = () => {
   const [commentInput, setCommentInput] = useState('');
 
   useEffect(() => {
-    localStorage.setItem('shrived-gallery-reactions', JSON.stringify(reactions));
+    localStorage.setItem('shrivedpuja-gallery-reactions', JSON.stringify(reactions));
   }, [reactions]);
 
   useEffect(() => {
-    localStorage.setItem('shrived-gallery-comments', JSON.stringify(comments));
+    localStorage.setItem('shrivedpuja-gallery-comments', JSON.stringify(comments));
   }, [comments]);
 
   const galleryItems = [

@@ -50,10 +50,10 @@ const translations = {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [lang, setLang] = useState(() => localStorage.getItem('shrived-lang') || 'en');
+  const [lang, setLang] = useState(() => localStorage.getItem('shrivedpuja-lang') || 'en');
 
   useEffect(() => {
-    localStorage.setItem('shrived-lang', lang);
+    localStorage.setItem('shrivedpuja-lang', lang);
   }, [lang]);
 
   const t = (key) => {

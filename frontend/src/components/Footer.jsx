@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <span className="footer-logo">🕉 Shrived.in</span>
+            <span className="footer-logo">🕉 ShrivedPuja.in</span>
             <p>Connecting modern Hindu families with authentic Vedic rituals, verified pandit, and divine peace across Bangalore & beyond.</p>
             <div className="footer-social">
               <a href="https://www.facebook.com/share/1c6AJcNhk4/" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <span>&copy; 2026 Shrived.in. All rights reserved. Built with devotion 🙏</span>
+          <span>&copy; 2026 ShrivedPuja.in. All rights reserved. Built with devotion 🙏</span>
           <div className="footer-lang-switcher">
             <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>English</button>
             <button className={`lang-btn ${lang === 'bn' ? 'active' : ''}`} onClick={() => setLang('bn')}>বাংলা</button>

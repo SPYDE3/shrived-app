@@ -6,7 +6,7 @@ const Chatbot = () => {
     {
       id: 1,
       sender: 'bot',
-      text: "Pranam! I am your spiritual guide at Shrived.in. How can I help you today?",
+      text: "Pranam! I am your spiritual guide at ShrivedPuja.in. How can I help you today?",
       suggestions: [
         { label: 'New House Puja', query: 'Suggest Puja for new house' },
         { label: 'Odia Pandit', query: 'Odia pandit in Bangalore' },
@@ -81,7 +81,7 @@ const Chatbot = () => {
         <div className="chatbot-header bg-gradient-to-r from-[#FF6B1A] to-[#8B0000] text-white p-4 flex items-center gap-3">
           <div className="chatbot-avatar w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">🧘</div>
           <div>
-            <div className="chatbot-name font-semibold">Shrived.in AI Guide</div>
+            <div className="chatbot-name font-semibold">ShrivedPuja.in AI Guide</div>
             <div className="chatbot-status text-[10px] opacity-80">Online • Spiritual Assistant</div>
           </div>
           <button 

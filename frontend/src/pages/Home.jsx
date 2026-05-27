@@ -133,7 +133,7 @@ const Home = () => {
       {/* Page Loader */}
       {loading && (
         <div id="page-loader">
-          <div className="loader-logo">🕉 Shrived.in</div>
+          <div className="loader-logo">🕉 ShrivedPuja.in</div>
           <div className="loader-bar"><div className="loader-bar-fill"></div></div>
         </div>
       )}
@@ -198,7 +198,7 @@ const Home = () => {
       <section className="section-sm my-20">
         <div className="container">
           <div className="card-glass reveal visible p-10 md:p-12 bg-[var(--glass-bg)] border border-[var(--border-color)] rounded-3xl max-w-[950px] mx-auto shadow-lg relative overflow-hidden">
-            <h3 className="display-2 text-center !text-3xl font-bold mb-10" style={{ fontFamily: "var(--font-heading)" }}>Why Families Trust Shrived.in</h3>
+            <h3 className="display-2 text-center !text-3xl font-bold mb-10" style={{ fontFamily: "var(--font-heading)" }}>Why Families Trust ShrivedPuja.in</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="flex flex-col items-center text-center p-4">
                 <div className="trust-icon w-14 h-14 rounded-full bg-[#D4A017]/10 text-[#D4A017] flex items-center justify-center text-2xl mb-4 shadow-sm"><i className="fa-solid fa-certificate"></i></div>
@@ -312,7 +312,7 @@ const Home = () => {
           <div className="section-header text-center mb-12">
             <span className="eyebrow text-xs uppercase tracking-widest text-[#FF6B1A]">Sacred Flow</span>
             <h2 className="display-2 text-3xl font-bold my-2">How it Works</h2>
-            <p className="text-gray-400">Shrived.in simplifies your spiritual arrangements in simple steps.</p>
+            <p className="text-gray-400">ShrivedPuja.in simplifies your spiritual arrangements in simple steps.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -376,7 +376,7 @@ const Home = () => {
               <div className="gallery-cta-glow"></div>
               <div className="gallery-cta-content">
                 <div className="text-4xl text-[#FF6B1A] mb-4 sacred-symbol">🕉</div>
-                <h3 className="testimonial-rating-header text-2xl font-bold mb-2">Shrived.in Pandits</h3>
+                <h3 className="testimonial-rating-header text-2xl font-bold mb-2">ShrivedPuja.in Pandits</h3>
                 <p className="text-[#705d4b] text-sm mb-8 font-medium">Authentic Religious Services</p>
                 <div className="flex flex-col gap-4 max-w-[280px] mx-auto">
                   <a href="#" className="testimonial-btn-google w-full"><i className="fa-brands fa-google mr-2 text-red-500"></i> Read Google Reviews</a>
