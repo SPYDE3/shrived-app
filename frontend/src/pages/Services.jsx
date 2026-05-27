@@ -47,16 +47,27 @@ const Services = () => {
                   className="puja-list-item reveal visible flex items-center justify-between p-6 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl hover:translate-x-3 transition-all duration-300"
                 >
                   <div className="flex items-center">
-                    <div className="puja-icon w-[65px] h-[65px] rounded-full border border-[var(--border-color)] bg-[rgba(255,107,26,0.05)] overflow-hidden flex items-center justify-center mr-6 shadow-sm relative">
-                      {service.image ? (
-                        <img 
-                          src={service.image} 
-                          alt={service.name} 
-                          className="w-full h-full object-cover" 
-                        />
-                      ) : (
-                        <span className="text-3xl">{service.icon}</span>
-                      )}
+                    <div className="relative mr-6">
+                      <Link 
+                        to={`/booking?puja=${service.id}`}
+                        className="puja-icon w-[65px] h-[65px] rounded-full border border-[var(--border-color)] bg-[rgba(255,107,26,0.05)] overflow-hidden flex items-center justify-center shadow-sm block hover:border-[var(--saffron)] transition-all duration-300"
+                      >
+                        {service.image ? (
+                          <img 
+                            src={service.image} 
+                            alt={service.name} 
+                            className="w-full h-full object-cover hover:scale-110 transition-all duration-300" 
+                          />
+                        ) : (
+                          <span className="text-3xl">{service.icon}</span>
+                        )}
+                      </Link>
+                      <Link 
+                        to={`/booking?puja=${service.id}`}
+                        className="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-[var(--saffron)] text-white flex items-center justify-center text-[10px] shadow-[0_2px_4px_rgba(0,0,0,0.3)] hover:scale-110 transition-transform duration-200 border border-white"
+                      >
+                        <i className="fa-solid fa-arrow-right"></i>
+                      </Link>
                     </div>
                     <div className="puja-name font-semibold text-lg">{service.name}</div>
                   </div>

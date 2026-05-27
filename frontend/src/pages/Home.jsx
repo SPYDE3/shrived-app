@@ -106,15 +106,15 @@ const Home = () => {
 
 
   const popularServices = [
-    { id: 'grihapravesh', icon: '🏡', title: 'House Warming (Griha Pravesh)', desc: 'Sanctify your new home with positive energy and divine blessings.', image: 'tom-LvelDKbCeZg-unsplash.jpg' },
-    { id: 'satyanarayan', icon: '✨', title: 'Satyanarayan Vrat Katha', desc: 'Monthly Purnima puja for peace, wealth, and wellness.', image: 'SATYANARAYAN PUJA.jpg' },
+    { id: 'grihapravesh', icon: '🏡', title: 'House Warming (Griha Pravesh)', desc: 'Sanctify your new home with positive energy and divine blessings.', image: 'gruhapravesh_user.jpg' },
+    { id: 'satyanarayan', icon: '✨', title: 'Satyanarayan Vrat Katha', desc: 'Monthly Purnima puja for peace, wealth, and wellness.', image: 'satyanarayan_user.jpg' },
     { id: 'marriage', icon: '💒', title: 'Marriage Puja & Vivah', desc: 'Complete Vedic marriage ceremonies with traditional customs.', image: 'MARRAIGE.jpg' },
     { id: 'havan', icon: '🔥', title: 'Havan & Homam', desc: 'Sacred fire ceremony to invoke deities and purify surroundings.', image: 'HAVAN.jpg' },
     { id: 'annaprashan', icon: '🍚', title: 'Annaprashan', desc: "Baby's first rice feeding ceremony with traditional blessings.", image: 'ANNAPRASANA.jpg' },
     { id: 'durga', icon: '🔱', title: 'Bengali Rituals', desc: 'Authentic Bengali Durga Puja, Kali Puja, and Saraswati Puja.', image: 'Bengali Rituals.jpg' },
     { id: 'odia', icon: '🛕', title: 'Odia Rituals', desc: 'Traditional Odia Laxmi Puja, Sudasha Brata and regional vrat.', image: 'Odia Rituals.jpg' },
     { id: 'temple', icon: '🕉️', title: 'Temple Ceremonies', desc: 'Special abhishekam and temple offerings managed for you.', image: 'temple ceremonies.jpg' },
-    { id: 'sundarkanda', icon: '🐒', title: 'Sundarkanda Path', desc: 'Sacred recitation of Lord Hanuman\'s epic journey for strength and protection.', image: 'Sundarkanda.jpg' },
+    { id: 'sundarkanda', icon: '🐒', title: 'Sundarkanda Path', desc: 'Sacred recitation of Lord Hanuman\'s epic journey for strength and protection.', image: 'sundarkand_user.jpg' },
     { id: 'rudrabhishek', icon: '🔱', title: 'Rudrabhishek Puja', desc: 'Sacred bathing of Shiva Lingam with holy liquids to invoke Lord Shiva\'s blessings.', image: 'rudrabhishek.png' }
   ];
 
@@ -242,12 +242,17 @@ const Home = () => {
             {popularServices.map((service) => (
               <div key={service.id} className="service-card overflow-hidden bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between shadow-sm" style={{ padding: 0 }}>
                 <div>
-                  <div className="relative h-56 w-full overflow-hidden bg-gray-900">
-                    <img 
-                      src={service.image} 
-                      alt={service.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
-                    />
+                  <div className="relative h-56 w-full overflow-hidden bg-gray-900 group">
+                    <Link to={`/booking?puja=${service.id}`}>
+                      <img 
+                        src={service.image} 
+                        alt={service.title} 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                      />
+                      <div className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-[var(--saffron)] text-white flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-115 border border-white/20">
+                        <i className="fa-solid fa-arrow-right text-xs"></i>
+                      </div>
+                    </Link>
                     <div className="absolute top-3 right-3 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-lg border border-white/10">
                       {service.icon}
                     </div>
