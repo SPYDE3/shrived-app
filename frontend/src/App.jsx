@@ -5,7 +5,6 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppFAB from './components/WhatsAppFAB';
-import Chatbot from './components/Chatbot';
 
 // Pages
 import Home from './pages/Home';
@@ -40,7 +39,6 @@ function App() {
             
             {/* Overlay components */}
             <WhatsAppFAB />
-            <Chatbot />
           </div>
         </Router>
       </ThemeProvider>
