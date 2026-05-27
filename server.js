@@ -21,8 +21,10 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static frontend files from 'public' folder
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static frontend files
+// 'public/' contains the pre-built frontend committed to the repo (used by Railway)
+const staticDir = path.join(__dirname, 'public');
+app.use(express.static(staticDir));
 
 // Connect to MongoDB
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/shrived';
