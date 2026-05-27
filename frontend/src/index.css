@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@import "./css/variables.css";
+@import "./css/base.css";
+@import "./css/layout.css";
+@import "./css/components.css";
+@import "./css/animations.css";
+@import "./css/pages.css";
+
+/* Additional tailwind helpers and overrides if needed */
+@layer utilities {
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

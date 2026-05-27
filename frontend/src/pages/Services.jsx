@@ -1,0 +1,111 @@
+import React, { useState, useEffect } from 'react';
+import { useLocation, Link } from 'react-router-dom';
+import WhatsAppButton from '../components/WhatsAppButton';
+
+const Services = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const searchParam = params.get('search');
+    if (searchParam) {
+      setSearchQuery(searchParam);
+    }
+  }, [location]);
+
+  const allServices = [
+    { name: 'Satyanarayan Puja', icon: '✨' },
+    { name: 'Griha Pravesh', icon: '🏡' },
+    { name: 'Ganesh Puja', icon: '🐘' },
+    { name: 'Lakshmi Puja', icon: '🪔' },
+    { name: 'Navagraha Puja', icon: '🪐' },
+    { name: 'Rudrabhishek', icon: '🔱' },
+    { name: 'Vastu Puja', icon: '📐' },
+    { name: 'Wedding Rituals', icon: '💒' },
+    { name: 'Namkaran', icon: '👶' },
+    { name: 'Annaprashan', icon: '🍚' }
+  ];
+
+  const filteredServices = allServices.filter(service => 
+    service.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
+    <>
+      {/* Header */}
+      <div className="page-header text-center" style={{ background: "linear-gradient(180deg, rgba(255,107,26,0.05) 0%, var(--bg) 100%)", paddingTop: "140px", paddingBottom: "40px" }}>
+        <div className="container reveal visible">
+          <div className="nav-logo-icon text-5xl text-[var(--saffron)] mb-4">📿</div>
+          <h1 className="display-2 text-4xl font-bold mb-4">Sacred Pujas & Rituals</h1>
+          <p className="text-gray-400 max-w-[600px] mx-auto text-base">Select a ceremony below or book instantly on WhatsApp to finalize your divine arrangements.</p>
+          
+          {/* Search bar inside services page */}
+          <div className="mt-8 flex justify-center">
+            <input 
+              type="text" 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search services (e.g. Satyanarayan, Vastu)..." 
+              className="max-w-[400px] w-full px-5 py-3 border border-[var(--border-color)] bg-[var(--bg-card)] text-[var(--text-primary)] rounded-full text-sm outline-none focus:border-[var(--gold)]"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Services Minimalist List Section */}
+      <section className="section py-8">
+        <div className="container">
+          <div className="puja-list-container max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5">
+            {filteredServices.length > 0 ? (
+              filteredServices.map((service, idx) => (
+                <div 
+                  key={idx}
+                  className="puja-list-item reveal visible flex items-center justify-between p-6 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl hover:translate-x-3 transition-all duration-300"
+                >
+                  <div className="flex items-center">
+                    <div className="puja-icon w-[65px] h-[65px] rounded-full border border-[var(--border-color)] bg-[rgba(255,107,26,0.05)] text-[var(--saffron)] flex items-center justify-center text-3xl mr-6">
+                      {service.icon}
+                    </div>
+                    <div className="puja-name font-semibold text-lg">{service.name}</div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <Link to={`/booking?puja=${service.name.toLowerCase().replace(/\s+/g, '')}`} className="text-gray-400 hover:text-[var(--saffron)] text-sm mr-2">Details</Link>
+                    <WhatsAppButton pujaName={service.name} text="" className="w-10 h-10 rounded-full flex items-center justify-center p-0 shadow-none text-base" />
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="col-span-2 text-center text-gray-500 py-12">No services match your search.</div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Reassurance Section */}
+      <section className="reassurance-section reveal visible my-16">
+        <div className="reassurance-box max-w-[700px] mx-auto p-12 bg-[var(--bg-card)] border border-[rgba(255,107,26,0.2)] rounded-3xl text-center shadow-xl">
+          <div className="puja-icon w-[65px] h-[65px] rounded-full bg-white border border-[var(--border-color)] flex items-center justify-center text-3xl mx-auto -mt-20 shadow-md">
+            🙏
+          </div>
+          <h2 className="heading-2 font-bold my-4 text-2xl">Couldn’t Find Your Puja?</h2>
+          <p className="text-gray-400 text-base leading-relaxed mb-8">
+            No worries. Our experienced pandits also perform customized family, regional, temple, and community-specific rituals tailored to your exact needs.
+          </p>
+          
+          <div className="flex justify-center gap-4 flex-wrap">
+            <Link to="/booking" className="btn btn-outline py-3 px-6"><i className="fa-solid fa-phone"></i> Contact Pandit</Link>
+            <WhatsAppButton text="Chat on WhatsApp" className="py-3 px-6" />
+          </div>
+          
+          <div className="mt-6 font-semibold text-[var(--saffron)] text-sm">
+            <i className="fa-solid fa-shield-halved"></i> Trusted by families across Bangalore and beyond.
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Services;
