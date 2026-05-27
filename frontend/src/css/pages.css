@@ -5,9 +5,10 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   overflow: hidden;
-  padding-top: 80px; /* Space for navbar */
+  padding-top: 140px; /* Space for navbar */
+  padding-bottom: 60px;
 }
 
 .hero-bg {
@@ -46,7 +47,8 @@
   z-index: 4;
   text-align: center;
   max-width: 900px;
-  margin: 0 auto;
+  margin: auto auto;
+  width: 100%;
 }
 
 .hero-eyebrow {

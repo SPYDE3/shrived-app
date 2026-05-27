@@ -30,7 +30,7 @@ const Services = () => {
           <p className="text-gray-400 max-w-[600px] mx-auto text-base">Select a ceremony below or book instantly on WhatsApp to finalize your divine arrangements.</p>
           
           {/* Search bar inside services page */}
-          <div className="mt-8 flex justify-center w-full">
+          <div className="mt-8 flex justify-center w-full relative z-50">
             <PujaSearchBar onSearchSubmit={setSearchQuery} placeholder="Search services (e.g. Satyanarayan, Vastu)..." />
           </div>
         </div>

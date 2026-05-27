@@ -153,7 +153,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="reveal visible my-8 flex justify-center">
+          <div className="reveal visible my-8 flex justify-center relative z-50">
             <PujaSearchBar redirectOnSubmit={true} />
           </div>
 
