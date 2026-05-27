@@ -1,8 +1,19 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+
+  const getTagClass = (tag) => {
+    const t = tag.toLowerCase();
+    if (t.includes('fest') || t.includes('odia') || t.includes('custom')) {
+      return 'blog-editorial-tag-saffron';
+    } else if (t.includes('muhur') || t.includes('blue')) {
+      return 'blog-editorial-tag-blue';
+    }
+    return 'blog-editorial-tag-gold';
+  };
 
   const blogPosts = [
     {
@@ -57,12 +68,21 @@ const Blog = () => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1200px] mx-auto">
             {blogPosts.map((post, idx) => (
-              <div key={idx} className="blog-card rounded-2xl overflow-hidden bg-[var(--bg-card)] border border-[var(--border-color)] hover:translate-y-[-6px] transition-all duration-300">
-                <img className="blog-card-img w-full h-[220px] object-cover" src={post.img} alt={post.title} />
-                <div className="blog-card-body p-6">
-                  <span className="blog-tag bg-[var(--gold)]/20 text-[var(--gold)] text-[10px] px-3 py-1 rounded-full mb-3 inline-block font-semibold uppercase">{post.tag}</span>
-                  <h3 className="font-semibold text-lg mb-2 leading-snug">{post.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">{post.desc}</p>
+              <div key={idx} className="blog-editorial-card">
+                <div className="blog-editorial-img-wrapper">
+                  <img src={post.img} alt={post.title} />
+                </div>
+                <div className="blog-editorial-body">
+                  <div className="blog-editorial-meta">
+                    <span className={`blog-editorial-tag ${getTagClass(post.tag)}`}>
+                      {post.tag}
+                    </span>
+                  </div>
+                  <h3 className="blog-editorial-title">{post.title}</h3>
+                  <p className="blog-editorial-desc">{post.desc}</p>
+                  <div className="blog-editorial-footer">
+                    <Link to="#" className="blog-editorial-link">Read Article →</Link>
+                  </div>
                 </div>
               </div>
             ))}

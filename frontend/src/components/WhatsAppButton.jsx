@@ -4,7 +4,7 @@ const WhatsAppButton = ({ pujaName, text, className = '' }) => {
   const number = '917003220662';
   const defaultText = pujaName 
     ? `Hello Pandit Ji, I want to book ${pujaName}.`
-    : `Pranam Shrived, I'd like to book a puja/pandit service.`;
+    : `Pranam Shrived.in, I'd like to book a puja/pandit service.`;
 
   const waUrl = `https://wa.me/${number}?text=${encodeURIComponent(defaultText)}`;
 

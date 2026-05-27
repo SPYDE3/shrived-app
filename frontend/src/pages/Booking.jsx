@@ -34,8 +34,8 @@ const Booking = () => {
 
   const number = '917003220662';
   const textMessage = pujaName 
-    ? `Hari Om Shrived! I would like to book a ${pujaName} ceremony.`
-    : `Hari Om Shrived! I would like to discuss and book a puja.`;
+    ? `Hari Om Shrived.in! I would like to book a ${pujaName} ceremony.`
+    : `Hari Om Shrived.in! I would like to discuss and book a puja.`;
 
   const waUrl = `https://wa.me/${number}?text=${encodeURIComponent(textMessage)}`;
 

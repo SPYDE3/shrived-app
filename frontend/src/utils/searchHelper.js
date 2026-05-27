@@ -15,7 +15,12 @@ export const PUJA_LIST = [
   { id: 'odia', name: 'Odia Sudasha Brata / Laxmi Puja', icon: '🛕', category: 'setup', image: 'Odia Rituals.jpg' },
   { id: 'havan', name: 'Ganesh Puja & Havan Combo', icon: '🔥', category: 'pujas', image: 'HAVAN.jpg' },
   { id: 'temple', name: 'Temple Ceremonies', icon: '🕉️', category: 'setup', image: 'temple ceremonies.jpg' },
-  { id: 'sundarkanda', name: 'Sundarkanda Path', icon: '🐒', category: 'pujas', image: 'sundarkand_user.jpg' }
+  { id: 'sundarkanda', name: 'Sundarkanda Path', icon: '🐒', category: 'pujas', image: 'sundarkand_user.jpg' },
+  { id: 'navagrahashanti', name: 'Navagraha Shanti Puja', icon: '🪐', category: 'pujas', image: 'ai_kalash.png' },
+  { id: 'sradha', name: 'Sradha Puja', icon: '🙏', category: 'pujas', image: 'ai_kalash.png' },
+  { id: 'pitrutarpana', name: 'Pitru Tarpana', icon: '🌊', category: 'pujas', image: 'ai_kalash.png' },
+  { id: 'mahamrityunjay', name: 'Mahamrityunjay Mantra Jaap Puja', icon: '🔱', category: 'pujas', image: 'ai_kalash.png' },
+  { id: 'kalasarpadosha', name: 'Kala Sarpa Dosha Puja', icon: '🐍', category: 'pujas', image: 'ai_kalash.png' }
 ];
 
 // Helper to check if search query is a subsequence of the target string

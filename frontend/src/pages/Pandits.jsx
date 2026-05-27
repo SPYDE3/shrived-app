@@ -14,12 +14,12 @@ const Pandits = () => {
         <div className="flex justify-center mt-8">
           {/* Pandit 1 */}
           <div className="pandit-card bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl overflow-hidden max-w-[500px] w-full shadow-xl">
-            <img src="My_photo.jpeg" alt="Bibhupada Mishra" className="w-full h-[350px] object-cover" />
+            <img src="MY_NEWPHOTO.png" alt="Bibhupada Mishra" className="w-full h-[350px] object-cover" />
             <div className="pandit-card-body p-8">
               <h3 className="pandit-name text-2xl font-bold mb-2">Pandit Bibhupada Mishra</h3>
               
               <div className="pandit-meta flex gap-6 text-sm text-gray-400 mb-4">
-                <span><i className="fa-solid fa-location-dot"></i> Bangalore</span>
+                <span><i className="fa-solid fa-location-dot"></i> Bangalore , Electronic City</span>
                 <span><i className="fa-solid fa-language"></i> Odia, Hindi, Bengali, Sanskrit</span>
               </div>
               

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import DailyQuote from '../components/DailyQuote';
-import CountdownWidget from '../components/CountdownWidget';
 import WhatsAppButton from '../components/WhatsAppButton';
 import PujaSearchBar from '../components/PujaSearchBar';
 
@@ -134,7 +133,7 @@ const Home = () => {
       {/* Page Loader */}
       {loading && (
         <div id="page-loader">
-          <div className="loader-logo">🕉 Shrived.</div>
+          <div className="loader-logo">🕉 Shrived.in</div>
           <div className="loader-bar"><div className="loader-bar-fill"></div></div>
         </div>
       )}
@@ -195,37 +194,35 @@ const Home = () => {
       {/* Daily Quotes */}
       <DailyQuote />
 
-      {/* Trust Badges & Festival Countdown */}
-      <section className="section-sm my-16">
-        <div className="container grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="card-glass reveal visible p-8 bg-[var(--glass-bg)] border border-[var(--border-color)] rounded-2xl">
-            <h3 className="heading-3 mb-6 text-xl font-bold">Why Families Trust Shrived.</h3>
-            <div className="trust-items flex flex-col gap-6">
-              <div className="trust-item flex gap-4">
-                <div className="trust-icon w-10 h-10 rounded-full bg-[#D4A017]/15 text-[#D4A017] flex items-center justify-center text-lg"><i className="fa-solid fa-certificate"></i></div>
+      {/* Trust Badges */}
+      <section className="section-sm my-20">
+        <div className="container">
+          <div className="card-glass reveal visible p-10 md:p-12 bg-[var(--glass-bg)] border border-[var(--border-color)] rounded-3xl max-w-[950px] mx-auto shadow-lg relative overflow-hidden">
+            <h3 className="display-2 text-center !text-3xl font-bold mb-10" style={{ fontFamily: "var(--font-heading)" }}>Why Families Trust Shrived.in</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="flex flex-col items-center text-center p-4">
+                <div className="trust-icon w-14 h-14 rounded-full bg-[#D4A017]/10 text-[#D4A017] flex items-center justify-center text-2xl mb-4 shadow-sm"><i className="fa-solid fa-certificate"></i></div>
                 <div>
-                  <strong className="block mb-1">Certified Vedic Pandit</strong>
-                  <p className="text-muted text-sm">Trained in traditional Gurukuls and verified for credentials.</p>
+                  <strong className="block mb-2 font-bold text-lg text-[var(--text-primary)]">Certified Vedic Pandit</strong>
+                  <p className="text-muted text-sm leading-relaxed">Trained in traditional Gurukuls and verified for credentials.</p>
                 </div>
               </div>
-              <div className="trust-item flex gap-4">
-                <div className="trust-icon w-10 h-10 rounded-full bg-[#D4A017]/15 text-[#D4A017] flex items-center justify-center text-lg"><i className="fa-solid fa-leaf"></i></div>
+              <div className="flex flex-col items-center text-center p-4">
+                <div className="trust-icon w-14 h-14 rounded-full bg-[#D4A017]/10 text-[#D4A017] flex items-center justify-center text-2xl mb-4 shadow-sm"><i className="fa-solid fa-leaf"></i></div>
                 <div>
-                  <strong className="block mb-1">Customary Samagri Assistance</strong>
-                  <p className="text-muted text-sm">We provide complete, pure, and natural puja samagri arrangements.</p>
+                  <strong className="block mb-2 font-bold text-lg text-[var(--text-primary)]">Customary Samagri Assistance</strong>
+                  <p className="text-muted text-sm leading-relaxed">We provide complete, pure, and natural puja samagri arrangements.</p>
                 </div>
               </div>
-              <div className="trust-item flex gap-4">
-                <div className="trust-icon w-10 h-10 rounded-full bg-[#D4A017]/15 text-[#D4A017] flex items-center justify-center text-lg"><i className="fa-solid fa-om"></i></div>
+              <div className="flex flex-col items-center text-center p-4">
+                <div className="trust-icon w-14 h-14 rounded-full bg-[#D4A017]/10 text-[#D4A017] flex items-center justify-center text-2xl mb-4 shadow-sm"><i className="fa-solid fa-om"></i></div>
                 <div>
-                  <strong className="block mb-1">Hassle-Free Authentic Rituals</strong>
-                  <p className="text-muted text-sm">Tailored strictly according to Bengali, Odia, or regional customs.</p>
+                  <strong className="block mb-2 font-bold text-lg text-[var(--text-primary)]">Hassle-Free Authentic Rituals</strong>
+                  <p className="text-muted text-sm leading-relaxed">Tailored strictly according to Bengali, Odia, or regional customs.</p>
                 </div>
               </div>
             </div>
           </div>
-
-          <CountdownWidget />
         </div>
       </section>
 
@@ -243,16 +240,11 @@ const Home = () => {
               <div key={service.id} className="service-card overflow-hidden bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between shadow-sm" style={{ padding: 0 }}>
                 <div>
                   <div className="relative h-56 w-full overflow-hidden bg-gray-900 group">
-                    <Link to={`/booking?puja=${service.id}`}>
-                      <img 
-                        src={service.image} 
-                        alt={service.title} 
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                      />
-                      <div className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-[var(--saffron)] text-white flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-115 border border-white/20">
-                        <i className="fa-solid fa-arrow-right text-xs"></i>
-                      </div>
-                    </Link>
+                    <img 
+                      src={service.image} 
+                      alt={service.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                    />
                     <div className="absolute top-3 right-3 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-lg border border-white/10">
                       {service.icon}
                     </div>
@@ -291,11 +283,11 @@ const Home = () => {
           
           <div className="flex justify-center">
             <div className="pandit-card bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl overflow-hidden max-w-[450px] w-full shadow-lg">
-              <img src="My_photo.jpeg" alt="Bibhupada Mishra" className="w-full h-[300px] object-cover" />
+              <img src="MY_NEWPHOTO.png" alt="Bibhupada Mishra" className="w-full h-[300px] object-cover" />
               <div className="pandit-card-body p-6">
                 <h3 className="pandit-name text-xl font-bold mb-1">Pandit Bibhupada Mishra</h3>
                 <div className="pandit-meta flex gap-4 text-xs text-gray-400 mb-4">
-                  <span><i className="fa-solid fa-location-dot"></i> Bangalore</span>
+                  <span><i className="fa-solid fa-location-dot"></i> Bangalore , Electronic City</span>
                   <span><i className="fa-solid fa-language"></i> Odia, Hindi, Bengali, Sanskrit</span>
                 </div>
                 <div className="pandit-tags flex flex-wrap gap-2 mb-6">
@@ -320,7 +312,7 @@ const Home = () => {
           <div className="section-header text-center mb-12">
             <span className="eyebrow text-xs uppercase tracking-widest text-[#FF6B1A]">Sacred Flow</span>
             <h2 className="display-2 text-3xl font-bold my-2">How it Works</h2>
-            <p className="text-gray-400">Shrived simplifies your spiritual arrangements in simple steps.</p>
+            <p className="text-gray-400">Shrived.in simplifies your spiritual arrangements in simple steps.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -369,49 +361,54 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Reviews Section */}
-      <section className="section py-16 border-t border-[var(--border-color)]">
-        <div className="container max-w-[900px]">
+      {/* Reviews Section - Premium Testimonials */}
+      <section className="testimonials-section">
+        <div className="container max-w-[950px]">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-2">Trusted by Families</h2>
-            <div className="text-yellow-400 text-lg mb-2">★★★★★</div>
-            <p className="text-gray-400 text-sm">4.9/5 based on 128+ Google verified reviews</p>
+            <h2 className="display-2 !text-4xl font-bold mb-3" style={{ fontFamily: "var(--font-heading)" }}>Trusted by Families</h2>
+            <div className="testimonial-gold-stars">★★★★★</div>
+            <p className="text-[#8b715c] text-sm font-semibold">4.9/5 based on 128+ Google verified reviews</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div className="text-center p-8 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl">
-              <div className="text-4xl text-[#FF6B1A] mb-4">🕉</div>
-              <h3 className="text-xl font-bold mb-1">Shrived Pandits</h3>
-              <p className="text-gray-400 text-sm mb-6">Authentic Religious Services</p>
-              <div className="flex flex-col gap-3">
-                <a href="#" className="btn btn-outline w-full py-3"><i className="fa-brands fa-google mr-2 text-red-500"></i> Read Google Reviews</a>
-                <WhatsAppButton text="Contact on WhatsApp" className="w-full py-3" />
+            {/* Left side Summary Card */}
+            <div className="testimonial-summary-card text-center">
+              <div className="gallery-cta-glow"></div>
+              <div className="gallery-cta-content">
+                <div className="text-4xl text-[#FF6B1A] mb-4 sacred-symbol">🕉</div>
+                <h3 className="testimonial-rating-header text-2xl font-bold mb-2">Shrived.in Pandits</h3>
+                <p className="text-[#705d4b] text-sm mb-8 font-medium">Authentic Religious Services</p>
+                <div className="flex flex-col gap-4 max-w-[280px] mx-auto">
+                  <a href="#" className="testimonial-btn-google w-full"><i className="fa-brands fa-google mr-2 text-red-500"></i> Read Google Reviews</a>
+                  <WhatsAppButton text="Contact on WhatsApp" className="testimonial-btn-whatsapp w-full" />
+                </div>
               </div>
             </div>
 
-            <div className="flex flex-col gap-4">
-              <div className="p-5 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl shadow-sm">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-semibold text-sm">Sasmita Nayak</span>
-                  <span className="text-yellow-400 text-xs">★★★★★</span>
+            {/* Right side Review Cards */}
+            <div className="flex flex-col gap-5">
+              <div className="testimonial-review-card">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="testimonial-reviewer-name">Sasmita Nayak</span>
+                  <span className="text-[#D4A017] text-xs">★★★★★</span>
                 </div>
-                <p className="text-gray-400 text-xs leading-relaxed">Excellent service! The pandit was professional and knowledgeable about all traditions. Would definitely book again.</p>
+                <p className="testimonial-review-text">Excellent service! The pandit was professional and knowledgeable about all traditions. Would definitely book again.</p>
               </div>
 
-              <div className="p-5 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl shadow-sm">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-semibold text-sm">Subhajit Sen</span>
-                  <span className="text-yellow-400 text-xs">★★★★★</span>
+              <div className="testimonial-review-card">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="testimonial-reviewer-name">Subhajit Sen</span>
+                  <span className="text-[#D4A017] text-xs">★★★★★</span>
                 </div>
-                <p className="text-gray-400 text-xs leading-relaxed">Transparent pricing and smooth booking process. The griha pravesh was handled perfectly.</p>
+                <p className="testimonial-review-text">Transparent pricing and smooth booking process. The griha pravesh was handled perfectly.</p>
               </div>
 
-              <div className="p-5 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl shadow-sm">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-semibold text-sm">Neha Sharma</span>
-                  <span className="text-yellow-400 text-xs">★★★★★</span>
+              <div className="testimonial-review-card">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="testimonial-reviewer-name">Neha Sharma</span>
+                  <span className="text-[#D4A017] text-xs">★★★★★</span>
                 </div>
-                <p className="text-gray-400 text-xs leading-relaxed">Great experience! The team was helpful throughout the planning, and the samagri provided was top quality.</p>
+                <p className="testimonial-review-text">Great experience! The team was helpful throughout the planning, and the samagri provided was top quality.</p>
               </div>
             </div>
           </div>
@@ -427,33 +424,51 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="blog-card rounded-2xl overflow-hidden bg-[var(--bg-card)] border border-[var(--border-color)] hover:translate-y-[-6px] transition-all duration-300">
-              <img src="ai_satyanarayan.png" alt="Satyanarayan Puja Setup" className="w-full h-[200px] object-cover" />
-              <div className="blog-card-body p-5">
-                <span className="badge badge-gold bg-[#D4A017]/20 text-[#D4A017] text-[10px] px-3 py-1 rounded-full mb-3 inline-block">Puja Guide</span>
-                <h3 className="font-semibold text-lg mb-2">Complete Guide to Satyanarayan Puja: Vidhi & Benefits</h3>
-                <p className="text-sm text-gray-400 mb-4">Discover the sacred significance and step-by-step procedure for this auspicious vrat.</p>
-                <div className="text-right"><Link to="/blog" className="text-xs font-semibold text-[#FF6B1A] hover:underline">Read More →</Link></div>
+            <div className="blog-editorial-card">
+              <div className="blog-editorial-img-wrapper">
+                <img src="1st.jpeg" alt="Satyanarayan Puja Setup" />
+              </div>
+              <div className="blog-editorial-body">
+                <div className="blog-editorial-meta">
+                  <span className="blog-editorial-tag blog-editorial-tag-gold">Puja Guide</span>
+                </div>
+                <h3 className="blog-editorial-title">Complete Guide to Satyanarayan Puja: Vidhi & Benefits</h3>
+                <p className="blog-editorial-desc">Discover the sacred significance and step-by-step procedure for this auspicious vrat.</p>
+                <div className="blog-editorial-footer">
+                  <Link to="/blog" className="blog-editorial-link">Read More →</Link>
+                </div>
               </div>
             </div>
 
-            <div className="blog-card rounded-2xl overflow-hidden bg-[var(--bg-card)] border border-[var(--border-color)] hover:translate-y-[-6px] transition-all duration-300">
-              <img src="ai_bengali_festival.png" alt="Bengali Durga Puja Festival" className="w-full h-[200px] object-cover" />
-              <div className="blog-card-body p-5">
-                <span className="badge badge-saffron bg-[#FF6B1A]/20 text-[#FF6B1A] text-[10px] px-3 py-1 rounded-full mb-3 inline-block">Festivals</span>
-                <h3 className="font-semibold text-lg mb-2">Top 10 Bengali Festivals to Celebrate in Bangalore</h3>
-                <p className="text-sm text-gray-400 mb-4">A complete calendar of major Bengali customs and how to prepare for them.</p>
-                <div className="text-right"><Link to="/blog" className="text-xs font-semibold text-[#FF6B1A] hover:underline">Read More →</Link></div>
+            <div className="blog-editorial-card">
+              <div className="blog-editorial-img-wrapper">
+                <img src="ai_bengali_festival.png" alt="Bengali Durga Puja Festival" />
+              </div>
+              <div className="blog-editorial-body">
+                <div className="blog-editorial-meta">
+                  <span className="blog-editorial-tag blog-editorial-tag-saffron">Festivals</span>
+                </div>
+                <h3 className="blog-editorial-title">Top 10 Bengali Festivals to Celebrate in Bangalore</h3>
+                <p className="blog-editorial-desc">A complete calendar of major Bengali customs and how to prepare for them.</p>
+                <div className="blog-editorial-footer">
+                  <Link to="/blog" className="blog-editorial-link">Read More →</Link>
+                </div>
               </div>
             </div>
 
-            <div className="blog-card rounded-2xl overflow-hidden bg-[var(--bg-card)] border border-[var(--border-color)] hover:translate-y-[-6px] transition-all duration-300">
-              <img src="four.jpeg" alt="Blog" className="w-full h-[200px] object-cover" />
-              <div className="blog-card-body p-5">
-                <span className="badge badge-blue bg-[#D4A017]/20 text-[#D4A017] text-[10px] px-3 py-1 rounded-full mb-3 inline-block">Muhurat</span>
-                <h3 className="font-semibold text-lg mb-2">Griha Pravesh Muhurat 2026: Best Dates & Vedic Rituals</h3>
-                <p className="text-sm text-gray-400 mb-4">Find the most auspicious timings for entering your new home this year.</p>
-                <div className="text-right"><Link to="/blog" className="text-xs font-semibold text-[#FF6B1A] hover:underline">Read More →</Link></div>
+            <div className="blog-editorial-card">
+              <div className="blog-editorial-img-wrapper">
+                <img src="four.jpeg" alt="Blog" />
+              </div>
+              <div className="blog-editorial-body">
+                <div className="blog-editorial-meta">
+                  <span className="blog-editorial-tag blog-editorial-tag-blue">Muhurat</span>
+                </div>
+                <h3 className="blog-editorial-title">Griha Pravesh Muhurat 2026: Best Dates & Vedic Rituals</h3>
+                <p className="blog-editorial-desc">Find the most auspicious timings for entering your new home this year.</p>
+                <div className="blog-editorial-footer">
+                  <Link to="/blog" className="blog-editorial-link">Read More →</Link>
+                </div>
               </div>
             </div>
           </div>

@@ -72,10 +72,12 @@ const Services = () => {
                     <div className="puja-name font-semibold text-lg">{service.name}</div>
                   </div>
                   
-                  <div className="flex items-center gap-3">
-                    <Link to={`/booking?puja=${service.id}`} className="text-gray-400 hover:text-[var(--saffron)] text-sm mr-2">Details</Link>
-                    <WhatsAppButton pujaName={service.name} text="" className="w-10 h-10 rounded-full flex items-center justify-center p-0 shadow-none text-base" />
-                  </div>
+                  <Link 
+                    to={`/booking?puja=${service.id}`} 
+                    className="w-10 h-10 rounded-full bg-[var(--gold)]/10 text-[var(--gold)] border border-[var(--gold)]/20 flex items-center justify-center hover:bg-[var(--gold)] hover:text-white hover:border-[var(--gold)] transition-all duration-300 shadow-sm"
+                  >
+                    <i className="fa-solid fa-arrow-right text-base"></i>
+                  </Link>
                 </div>
               ))
             ) : (
@@ -106,24 +108,35 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Reassurance Section */}
-      <section className="reassurance-section reveal visible my-16">
-        <div className="reassurance-box max-w-[700px] mx-auto p-12 bg-[var(--bg-card)] border border-[rgba(255,107,26,0.2)] rounded-3xl text-center shadow-xl">
-          <div className="puja-icon w-[65px] h-[65px] rounded-full bg-white border border-[var(--border-color)] flex items-center justify-center text-3xl mx-auto -mt-20 shadow-md">
-            🙏
-          </div>
-          <h2 className="heading-2 font-bold my-4 text-2xl">Couldn’t Find Your Puja?</h2>
-          <p className="text-gray-400 text-base leading-relaxed mb-8">
-            No worries. Our experienced pandits also perform customized family, regional, temple, and community-specific rituals tailored to your exact needs.
-          </p>
-          
-          <div className="flex justify-center gap-4 flex-wrap">
-            <Link to="/booking" className="btn btn-outline py-3 px-6"><i className="fa-solid fa-phone"></i> Contact Pandit</Link>
-            <WhatsAppButton text="Chat on WhatsApp" className="py-3 px-6" />
-          </div>
-          
-          <div className="mt-6 font-semibold text-[var(--saffron)] text-sm">
-            <i className="fa-solid fa-shield-halved"></i> Trusted by families across Bangalore and beyond.
+      {/* Reassurance Section - Premium Luxury CTA */}
+      <section className="services-cta-section reveal visible">
+        <div className="services-cta-card">
+          <div className="services-cta-glow"></div>
+          <div className="services-cta-content">
+            <div className="services-cta-icon-wrapper">
+              🙏
+            </div>
+            <h2 className="services-cta-title">Couldn’t Find Your Puja?</h2>
+            <p className="services-cta-subtitle">
+              No worries. Our experienced pandits also perform customized family, regional, temple, and community-specific rituals tailored to your exact needs.
+            </p>
+            
+            <div className="services-cta-buttons">
+              <WhatsAppButton 
+                text="Chat on WhatsApp" 
+                className="services-btn-primary" 
+              />
+              <Link 
+                to="/booking" 
+                className="services-btn-secondary"
+              >
+                <i className="fa-solid fa-phone"></i> Contact Pandit
+              </Link>
+            </div>
+            
+            <div className="services-cta-footer">
+              <i className="fa-solid fa-shield-halved"></i> Trusted by families across Bangalore and beyond.
+            </div>
           </div>
         </div>
       </section>
