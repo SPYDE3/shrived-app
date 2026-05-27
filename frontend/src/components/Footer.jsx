@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="footer-social">
               <a href="https://www.facebook.com/share/1c6AJcNhk4/" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
               <a href="https://www.instagram.com/babusona_happylife" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
-              <a href="#" className="social-link"><i className="fa-brands fa-youtube"></i></a>
+              <a href="https://www.youtube.com" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-youtube"></i></a>
               <a href="https://wa.me/917003220662" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-whatsapp"></i></a>
             </div>
           </div>
