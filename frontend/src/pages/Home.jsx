@@ -106,14 +106,14 @@ const Home = () => {
 
 
   const popularServices = [
-    { id: 'grihapravesh', icon: '🏡', title: 'House Warming (Griha Pravesh)', desc: 'Sanctify your new home with positive energy and divine blessings.' },
-    { id: 'satyanarayan', icon: '✨', title: 'Satyanarayan Vrat Katha', desc: 'Monthly Purnima puja for peace, wealth, and wellness.' },
-    { id: 'marriage', icon: '💒', title: 'Marriage Puja & Vivah', desc: 'Complete Vedic marriage ceremonies with traditional customs.' },
-    { id: 'havan', icon: '🔥', title: 'Havan & Homam', desc: 'Sacred fire ceremony to invoke deities and purify surroundings.' },
-    { id: 'annaprashan', icon: '🍚', title: 'Annaprashan', desc: "Baby's first rice feeding ceremony with traditional blessings." },
-    { id: 'durga', icon: '🔱', title: 'Bengali Rituals', desc: 'Authentic Bengali Durga Puja, Kali Puja, and Saraswati Puja.' },
-    { id: 'odia', icon: '🛕', title: 'Odia Rituals', desc: 'Traditional Odia Laxmi Puja, Sudasha Brata and regional vrat.' },
-    { id: 'temple', icon: '🕉️', title: 'Temple Ceremonies', desc: 'Special abhishekam and temple offerings managed for you.' }
+    { id: 'grihapravesh', icon: '🏡', title: 'House Warming (Griha Pravesh)', desc: 'Sanctify your new home with positive energy and divine blessings.', image: 'tom-LvelDKbCeZg-unsplash.jpg' },
+    { id: 'satyanarayan', icon: '✨', title: 'Satyanarayan Vrat Katha', desc: 'Monthly Purnima puja for peace, wealth, and wellness.', image: 'SATYANARAYAN PUJA.jpg' },
+    { id: 'marriage', icon: '💒', title: 'Marriage Puja & Vivah', desc: 'Complete Vedic marriage ceremonies with traditional customs.', image: 'MARRAIGE.jpg' },
+    { id: 'havan', icon: '🔥', title: 'Havan & Homam', desc: 'Sacred fire ceremony to invoke deities and purify surroundings.', image: 'HAVAN.jpg' },
+    { id: 'annaprashan', icon: '🍚', title: 'Annaprashan', desc: "Baby's first rice feeding ceremony with traditional blessings.", image: 'ANNAPRASANA.jpg' },
+    { id: 'durga', icon: '🔱', title: 'Bengali Rituals', desc: 'Authentic Bengali Durga Puja, Kali Puja, and Saraswati Puja.', image: 'Bengali Rituals.jpg' },
+    { id: 'odia', icon: '🛕', title: 'Odia Rituals', desc: 'Traditional Odia Laxmi Puja, Sudasha Brata and regional vrat.', image: 'Odia Rituals.jpg' },
+    { id: 'temple', icon: '🕉️', title: 'Temple Ceremonies', desc: 'Special abhishekam and temple offerings managed for you.', image: 'temple ceremonies.jpg' }
   ];
 
   const galleryPreview = [
@@ -238,14 +238,25 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {popularServices.map((service) => (
-              <div key={service.id} className="service-card p-6 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between">
+              <div key={service.id} className="service-card overflow-hidden bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between shadow-sm" style={{ padding: 0 }}>
                 <div>
-                  <div className="service-icon text-3xl mb-4">{service.icon}</div>
-                  <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-400 mb-6">{service.desc}</p>
+                  <div className="relative h-44 w-full overflow-hidden bg-gray-900">
+                    <img 
+                      src={service.image} 
+                      alt={service.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+                    />
+                    <div className="absolute top-3 right-3 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-lg border border-white/10">
+                      {service.icon}
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-semibold text-lg mb-2 text-[var(--text-primary)]">{service.title}</h3>
+                    <p className="text-sm text-gray-400 mb-4 line-clamp-2">{service.desc}</p>
+                  </div>
                 </div>
                 
-                <div className="flex flex-col gap-2">
+                <div className="px-6 pb-6 flex flex-col gap-2">
                   <Link to={`/booking?puja=${service.id}`} className="btn btn-outline text-center py-2 text-xs">Details</Link>
                   <WhatsAppButton pujaName={service.title} text="Quick Book" className="py-2 text-xs shadow-none" />
                 </div>

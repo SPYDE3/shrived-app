@@ -1,20 +1,21 @@
 // Puja list and similarity-based fuzzy search utility
 
 export const PUJA_LIST = [
-  { id: 'satyanarayan', name: 'Satyanarayan Puja', icon: '✨', category: 'pujas' },
-  { id: 'grihapravesh', name: 'Griha Pravesh (House Warming)', icon: '🏡', category: 'setup' },
-  { id: 'ganesh', name: 'Ganesh Puja', icon: '🐘', category: 'pujas' },
-  { id: 'lakshmi', name: 'Lakshmi Puja', icon: '🪔', category: 'pujas' },
-  { id: 'navagraha', name: 'Navagraha Puja', icon: '🪐', category: 'pujas' },
-  { id: 'rudrabhishek', name: 'Rudrabhishek', icon: '🔱', category: 'pujas' },
-  { id: 'vastu', name: 'Vastu Puja', icon: '📐', category: 'setup' },
-  { id: 'marriage', name: 'Wedding Rituals', icon: '💒', category: 'blessings' },
-  { id: 'namkaran', name: 'Namkaran', icon: '👶', category: 'blessings' },
-  { id: 'annaprashan', name: 'Annaprashan', icon: '🍚', category: 'pujas' },
-  { id: 'durga', name: 'Bengali Durga Puja Rituals', icon: '🔱', category: 'pujas' },
-  { id: 'odia', name: 'Odia Sudasha Brata / Laxmi Puja', icon: '🛕', category: 'setup' },
-  { id: 'havan', name: 'Ganesh Puja & Havan Combo', icon: '🔥', category: 'pujas' },
-  { id: 'temple', name: 'Temple Ceremonies', icon: '🕉️', category: 'setup' }
+  { id: 'satyanarayan', name: 'Satyanarayan Puja', icon: '✨', category: 'pujas', image: 'SATYANARAYAN PUJA.jpg' },
+  { id: 'grihapravesh', name: 'Griha Pravesh (House Warming)', icon: '🏡', category: 'setup', image: 'tom-LvelDKbCeZg-unsplash.jpg' },
+  { id: 'ganesh', name: 'Ganesh Puja', icon: '🐘', category: 'pujas', image: 'ai_kalash.png' },
+  { id: 'lakshmi', name: 'Lakshmi Puja', icon: '🪔', category: 'pujas', image: 'ai_kalash.png' },
+  { id: 'navagraha', name: 'Navagraha Puja', icon: '🪐', category: 'pujas', image: 'ai_kalash.png' },
+  { id: 'rudrabhishek', name: 'Rudrabhishek', icon: '🔱', category: 'pujas', image: 'ai_kalash.png' },
+  { id: 'vastu', name: 'Vastu Puja', icon: '📐', category: 'setup', image: 'ai_kalash.png' },
+  { id: 'marriage', name: 'Wedding Rituals', icon: '💒', category: 'blessings', image: 'MARRAIGE.jpg' },
+  { id: 'namkaran', name: 'Namkaran', icon: '👶', category: 'blessings', image: 'ai_kalash.png' },
+  { id: 'annaprashan', name: 'Annaprashan', icon: '🍚', category: 'pujas', image: 'ANNAPRASANA.jpg' },
+  { id: 'durga', name: 'Bengali Durga Puja Rituals', icon: '🔱', category: 'pujas', image: 'Bengali Rituals.jpg' },
+  { id: 'odia', name: 'Odia Sudasha Brata / Laxmi Puja', icon: '🛕', category: 'setup', image: 'Odia Rituals.jpg' },
+  { id: 'havan', name: 'Ganesh Puja & Havan Combo', icon: '🔥', category: 'pujas', image: 'HAVAN.jpg' },
+  { id: 'temple', name: 'Temple Ceremonies', icon: '🕉️', category: 'setup', image: 'temple ceremonies.jpg' },
+  { id: 'sundarkanda', name: 'Sundarkanda Path', icon: '🐒', category: 'pujas', image: 'Sundarkanda .jpg' }
 ];
 
 // Helper to check if search query is a subsequence of the target string
