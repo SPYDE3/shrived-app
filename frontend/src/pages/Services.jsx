@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import WhatsAppButton from '../components/WhatsAppButton';
+import PujaSearchBar from '../components/PujaSearchBar';
+import { PUJA_LIST, searchPujas } from '../utils/searchHelper';
 
 const Services = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -14,22 +16,9 @@ const Services = () => {
     }
   }, [location]);
 
-  const allServices = [
-    { name: 'Satyanarayan Puja', icon: '✨' },
-    { name: 'Griha Pravesh', icon: '🏡' },
-    { name: 'Ganesh Puja', icon: '🐘' },
-    { name: 'Lakshmi Puja', icon: '🪔' },
-    { name: 'Navagraha Puja', icon: '🪐' },
-    { name: 'Rudrabhishek', icon: '🔱' },
-    { name: 'Vastu Puja', icon: '📐' },
-    { name: 'Wedding Rituals', icon: '💒' },
-    { name: 'Namkaran', icon: '👶' },
-    { name: 'Annaprashan', icon: '🍚' }
-  ];
-
-  const filteredServices = allServices.filter(service => 
-    service.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredServices = searchQuery.trim()
+    ? searchPujas(searchQuery)
+    : PUJA_LIST;
 
   return (
     <>
@@ -41,14 +30,8 @@ const Services = () => {
           <p className="text-gray-400 max-w-[600px] mx-auto text-base">Select a ceremony below or book instantly on WhatsApp to finalize your divine arrangements.</p>
           
           {/* Search bar inside services page */}
-          <div className="mt-8 flex justify-center">
-            <input 
-              type="text" 
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search services (e.g. Satyanarayan, Vastu)..." 
-              className="max-w-[400px] w-full px-5 py-3 border border-[var(--border-color)] bg-[var(--bg-card)] text-[var(--text-primary)] rounded-full text-sm outline-none focus:border-[var(--gold)]"
-            />
+          <div className="mt-8 flex justify-center w-full">
+            <PujaSearchBar onSearchSubmit={setSearchQuery} placeholder="Search services (e.g. Satyanarayan, Vastu)..." />
           </div>
         </div>
       </div>
@@ -60,7 +43,7 @@ const Services = () => {
             {filteredServices.length > 0 ? (
               filteredServices.map((service, idx) => (
                 <div 
-                  key={idx}
+                  key={service.id || idx}
                   className="puja-list-item reveal visible flex items-center justify-between p-6 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl hover:translate-x-3 transition-all duration-300"
                 >
                   <div className="flex items-center">
@@ -71,13 +54,34 @@ const Services = () => {
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <Link to={`/booking?puja=${service.name.toLowerCase().replace(/\s+/g, '')}`} className="text-gray-400 hover:text-[var(--saffron)] text-sm mr-2">Details</Link>
+                    <Link to={`/booking?puja=${service.id}`} className="text-gray-400 hover:text-[var(--saffron)] text-sm mr-2">Details</Link>
                     <WhatsAppButton pujaName={service.name} text="" className="w-10 h-10 rounded-full flex items-center justify-center p-0 shadow-none text-base" />
                   </div>
                 </div>
               ))
             ) : (
-              <div className="col-span-2 text-center text-gray-500 py-12">No services match your search.</div>
+              <div className="col-span-full py-16 flex flex-col items-center justify-center text-center max-w-[600px] mx-auto bg-[var(--bg-card)] border border-[var(--border-color)] rounded-3xl p-8 shadow-lg reveal visible">
+                <div className="w-20 h-20 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-4xl mb-6 animate-pulse shadow-[0_0_20px_rgba(245,158,11,0.2)]">
+                  🔍
+                </div>
+                <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-3">No Puja Found</h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-[480px]">
+                  We couldn't find a matching ceremony for "{searchQuery}". No worries! Pandit Bibhupada Mishra performs all custom family, regional, and Vedic rituals.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                  <WhatsAppButton 
+                    pujaName={searchQuery} 
+                    text={`Request "${searchQuery}" on WhatsApp`} 
+                    className="px-6 py-3 text-sm flex items-center justify-center gap-2" 
+                  />
+                  <Link 
+                    to="/booking" 
+                    className="btn btn-outline px-6 py-3 text-sm flex items-center justify-center gap-2"
+                  >
+                    <i className="fa-solid fa-phone"></i> Consult Pandit
+                  </Link>
+                </div>
+              </div>
             )}
           </div>
         </div>

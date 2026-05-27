@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import DailyQuote from '../components/DailyQuote';
 import CountdownWidget from '../components/CountdownWidget';
 import WhatsAppButton from '../components/WhatsAppButton';
+import PujaSearchBar from '../components/PujaSearchBar';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
-  const [searchValue, setSearchValue] = useState('');
   const canvasRef = useRef(null);
   const { lang, t } = useLanguage();
-  const navigate = useNavigate();
 
   // Loader Timer
   useEffect(() => {
@@ -104,12 +103,7 @@ const Home = () => {
     };
   }, [loading]);
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    if (searchValue.trim()) {
-      navigate(`/services?search=${encodeURIComponent(searchValue)}`);
-    }
-  };
+
 
   const popularServices = [
     { id: 'grihapravesh', icon: '🏡', title: 'House Warming (Griha Pravesh)', desc: 'Sanctify your new home with positive energy and divine blessings.' },
@@ -159,18 +153,8 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="reveal visible my-8">
-            <form onSubmit={handleSearchSubmit} className="hero-search flex max-w-[600px]">
-              <input 
-                type="text" 
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
-                placeholder="Search Pujas (e.g. Satyanarayan, Griha Pravesh)..." 
-                required 
-                className="flex-grow p-4 rounded-l-full bg-white text-black outline-none border-none text-base"
-              />
-              <button type="submit" className="search-btn bg-[#FF6B1A] hover:bg-[#e0560f] text-white px-8 rounded-r-full font-semibold transition-all cursor-pointer border-none">Search</button>
-            </form>
+          <div className="reveal visible my-8 flex justify-center">
+            <PujaSearchBar redirectOnSubmit={true} />
           </div>
 
           <div className="hero-cta-group reveal visible flex gap-4">

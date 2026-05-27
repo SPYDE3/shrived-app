@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { PUJA_LIST } from '../utils/searchHelper';
 
 const Booking = () => {
   const [showCallModal, setShowCallModal] = useState(false);
@@ -23,7 +24,10 @@ const Booking = () => {
     const params = new URLSearchParams(location.search);
     const pujaParam = params.get('puja');
     if (pujaParam) {
-      const displayName = pujaPricing[pujaParam.toLowerCase()] || decodeURIComponent(pujaParam);
+      const matchedPuja = PUJA_LIST.find(p => p.id === pujaParam.toLowerCase());
+      const displayName = matchedPuja 
+        ? matchedPuja.name 
+        : (pujaPricing[pujaParam.toLowerCase()] || decodeURIComponent(pujaParam));
       setPujaName(displayName);
     }
   }, [location]);
