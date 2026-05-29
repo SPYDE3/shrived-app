@@ -291,7 +291,7 @@ const Home = () => {
                   <span><i className="fa-solid fa-language"></i> Odia, Hindi, Bengali, Sanskrit</span>
                 </div>
                 <div className="pandit-tags flex flex-wrap gap-2 mb-6">
-                  <span className="badge badge-saffron text-[10px] bg-[#FF6B1A] text-white px-3 py-1 rounded-full">Odia Customs Expert</span>
+                  <span className="badge badge-saffron text-[10px] bg-[#FF6B1A] text-white px-3 py-1 rounded-full">Vedic Sanatan Pooja Expert</span>
                   <span className="badge badge-blue text-[10px] bg-[#FF6B1A] text-white px-3 py-1 rounded-full">Vedic Chanting</span>
                   <span className="badge badge-verified text-[10px] bg-[#25D366] text-white px-3 py-1 rounded-full"><i className="fa-solid fa-check"></i> Verified</span>
                 </div>

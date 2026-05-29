@@ -24,12 +24,12 @@ const Pandits = () => {
               </div>
               
               <div className="pandit-tags flex flex-wrap gap-2 mb-6">
-                <span className="badge badge-saffron bg-[#FF6B1A] text-white px-3 py-1 rounded-full text-xs">Odia Customs Expert</span>
+                <span className="badge badge-saffron bg-[#FF6B1A] text-white px-3 py-1 rounded-full text-xs">Vedic Sanatan Pooja Expert</span>
                 <span className="badge badge-verified bg-[#25D366] text-white px-3 py-1 rounded-full text-xs"><i className="fa-solid fa-check"></i> Verified</span>
               </div>
               
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Highly experienced in traditional Odia marriage rituals, Sudasha Brata, Kojagori Lokkhi Puja, Griha Pravesh, and Lord Satyanarayan Katha. He provides complete, pure Vedic samagri arrangement assistance and conducts rituals with deep devotion and explanations of mantras.
+                Highly experienced in vedic sanatan traditional, Sudasha Brata, Kojagori Lokkhi Puja, Griha Pravesh, and Lord Satyanarayan Katha. He provides complete, pure Vedic samagri arrangement assistance and conducts rituals with deep devotion and explanations of mantras.
               </p>
               
               <div className="pandit-actions flex flex-col gap-3">
